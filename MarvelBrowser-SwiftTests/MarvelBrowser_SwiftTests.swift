@@ -1,10 +1,5 @@
-//
-//  MarvelBrowser_SwiftTests.swift
-//  MarvelBrowser-SwiftTests
-//
-//  Created by Jon Reid on 4/24/16.
-//  Copyright © 2016 Jon Reid. All rights reserved.
-//
+//  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 import XCTest
 @testable import MarvelBrowser_Swift
