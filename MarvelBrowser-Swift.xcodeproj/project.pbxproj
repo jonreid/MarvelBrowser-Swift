@@ -65,7 +65,9 @@
 				0EBB3C9E1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests */,
 				0EBB3C881CCC4090005EF4D5 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		0EBB3C881CCC4090005EF4D5 /* Products */ = {
 			isa = PBXGroup;
