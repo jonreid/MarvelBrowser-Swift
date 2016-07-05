@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E469A471D28BA5E00FE7184 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E469A461D28BA5E00FE7184 /* main.swift */; };
 		0E469A491D28BABE00FE7184 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */; };
+		0E9F3AD11D28CA700013C0C5 /* MarvelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9F3AD01D28CA700013C0C5 /* MarvelKeys.swift */; };
 		0EBB3C8B1CCC4091005EF4D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB3C8A1CCC4091005EF4D5 /* AppDelegate.swift */; };
 		0EBB3C8D1CCC4091005EF4D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB3C8C1CCC4091005EF4D5 /* ViewController.swift */; };
 		0EBB3C901CCC4091005EF4D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBB3C8E1CCC4091005EF4D5 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		0E469A461D28BA5E00FE7184 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		0E9F3AD01D28CA700013C0C5 /* MarvelKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelKeys.swift; sourceTree = "<group>"; };
 		0EBB3C871CCC4090005EF4D5 /* MarvelBrowser-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarvelBrowser-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBB3C8A1CCC4091005EF4D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EBB3C8C1CCC4091005EF4D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				0EBB3C8A1CCC4091005EF4D5 /* AppDelegate.swift */,
 				0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */,
+				0E7FB13C1D2B3DB6005F9835 /* MarvelKeys.swift */,
 				0EBB3C8C1CCC4091005EF4D5 /* ViewController.swift */,
 				0EBB3C8E1CCC4091005EF4D5 /* Main.storyboard */,
 				0EBB3C911CCC4091005EF4D5 /* Assets.xcassets */,
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7FB13D1D2B3DB6005F9835 /* MarvelKeys.swift in Sources */,
 				0EBB3C8D1CCC4091005EF4D5 /* ViewController.swift in Sources */,
 				0E469A491D28BABE00FE7184 /* TestingAppDelegate.swift in Sources */,
 				0EBB3C8B1CCC4091005EF4D5 /* AppDelegate.swift in Sources */,
