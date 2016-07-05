@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         print(urlString)
         
         // Create data task:
-        let session = URLSession.shared()
+        let session = URLSession.shared
         let url = URL(string: urlString)!
         let dataTask = session.dataTask(with: url) { (data, response, error) in
             print("error: ", error);
