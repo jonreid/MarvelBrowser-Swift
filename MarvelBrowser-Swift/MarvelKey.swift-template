@@ -1,0 +1,9 @@
+/*
+  Copy this file to MarvelKey.swift and edit it, filling in your own keys from
+  developer.marvel.com
+*/
+
+enum MarvelKey {
+    static let Public = "YOUR_PUBLIC_KEY"
+    static let Private = "YOUR_PRIVATE_KEY"
+}
