@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // Create data task:
         let session = URLSession.shared
         let url = URL(string: urlString)!
-        let dataTask = session.dataTask(with: url) { (data, response, error) in
+        let dataTask = session.dataTask(with: url) { data, response, error in
             print("error: ", error);
             print("response: ", response);
             let str = String(data: data!, encoding: String.Encoding.utf8)
