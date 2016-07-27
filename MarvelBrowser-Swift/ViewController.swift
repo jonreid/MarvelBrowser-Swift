@@ -9,7 +9,7 @@ class ViewController: UIViewController {
 
         // Concatenate keys per https://developer.marvel.com/documentation/authorization
         let timeStamp = "1" // Hard-coded for spike
-        let keys = timeStamp + MarvelKeys.privateKey + MarvelKeys.publicKey
+        let keys = timeStamp + MarvelKey.Private + MarvelKey.Public
 
         // Confirm manually:
         print(keys)
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         print(hash)
 
         // Manually confirm URL string:
-        let urlString = "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider&ts=\(timeStamp)&apikey=\(MarvelKeys.publicKey)&hash=\(hash)"
+        let urlString = "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider&ts=\(timeStamp)&apikey=\(MarvelKey.Public)&hash=\(hash)"
         print(urlString)
         
         // Create data task:
