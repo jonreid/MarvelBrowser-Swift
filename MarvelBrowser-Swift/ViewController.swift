@@ -17,10 +17,7 @@ class ViewController: UIViewController {
         // Create MD5 hash:
         var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
         CC_MD5(keys, CC_LONG(keys.utf8.count), &digest)
-        var hash = ""
-        for (_, byte) in digest.enumerated() {
-            hash += String(format: "%02x", byte)
-        }
+        let hash = digest.reduce("", combine: { $0 + String(format: "%02x", $1) })
 
         // Manually confirm that it's 32 hex digits:
         print(hash)
