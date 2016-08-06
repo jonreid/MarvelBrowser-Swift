@@ -39,7 +39,7 @@
 		0EBB3C961CCC4091005EF4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EBB3C9B1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MarvelBrowser-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelBrowser_SwiftTests.swift; sourceTree = "<group>"; };
-		0EBB3CA11CCC4091005EF4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
 		0EBB3CAA1CCC43B9005EF4D5 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */,
-				0EBB3CA11CCC4091005EF4D5 /* Info.plist */,
+				0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */,
 			);
 			path = "MarvelBrowser-SwiftTests";
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "MarvelBrowser-SwiftTests/Info.plist";
+				INFOPLIST_FILE = "MarvelBrowser-SwiftTests/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.MarvelBrowser-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,7 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "MarvelBrowser-SwiftTests/Info.plist";
+				INFOPLIST_FILE = "MarvelBrowser-SwiftTests/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.MarvelBrowser-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
