@@ -9,4 +9,8 @@ struct MarvelAuthentication {
         return String(Date.init().timeIntervalSinceReferenceDate)
     }
     
+    var publicKey: String {
+        return ""
+    }
+    
 }
