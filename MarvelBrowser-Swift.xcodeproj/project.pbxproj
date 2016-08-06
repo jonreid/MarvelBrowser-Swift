@@ -66,7 +66,6 @@
 			children = (
 				0EBB3CAA1CCC43B9005EF4D5 /* XcodeWarnings.xcconfig */,
 				0EBB3C891CCC4091005EF4D5 /* MarvelBrowser-Swift */,
-				0EBB3C9E1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests */,
 				0EBB3C881CCC4090005EF4D5 /* Products */,
 			);
 			indentWidth = 4;
@@ -92,18 +91,11 @@
 				0EBB3C911CCC4091005EF4D5 /* Assets.xcassets */,
 				0EBB3C931CCC4091005EF4D5 /* LaunchScreen.storyboard */,
 				0EBB3C961CCC4091005EF4D5 /* Info.plist */,
+				0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */,
+				0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */,
 				0E469A461D28BA5E00FE7184 /* main.swift */,
 			);
 			path = "MarvelBrowser-Swift";
-			sourceTree = "<group>";
-		};
-		0EBB3C9E1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */,
-				0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */,
-			);
-			path = "MarvelBrowser-SwiftTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "MarvelBrowser-SwiftTests/Info-Tests.plist";
+				INFOPLIST_FILE = "MarvelBrowser-Swift/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.MarvelBrowser-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,7 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "MarvelBrowser-SwiftTests/Info-Tests.plist";
+				INFOPLIST_FILE = "MarvelBrowser-Swift/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.MarvelBrowser-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
