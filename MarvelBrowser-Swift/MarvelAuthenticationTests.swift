@@ -8,8 +8,8 @@ class MarvelAuthenticationTests : XCTestCase {
 
     func testTimestamp_ShouldChangeAcrossInvocations() {
         let sut = MarvelAuthentication()
-        let ts1 = sut.timestamp()
-        let ts2 = sut.timestamp()
+        let ts1 = sut.timestamp
+        let ts2 = sut.timestamp
         
         XCTAssertNotEqual(ts1, ts2);
     }

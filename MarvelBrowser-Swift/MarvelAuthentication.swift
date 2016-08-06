@@ -5,7 +5,7 @@ import Foundation
 
 struct MarvelAuthentication {
     
-    func timestamp() -> String {
+    var timestamp: String {
         return String(Date.init().timeIntervalSinceReferenceDate)
     }
     
