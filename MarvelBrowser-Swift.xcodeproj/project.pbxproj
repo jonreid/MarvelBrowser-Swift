@@ -14,7 +14,6 @@
 		0EBB3C901CCC4091005EF4D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBB3C8E1CCC4091005EF4D5 /* Main.storyboard */; };
 		0EBB3C921CCC4091005EF4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EBB3C911CCC4091005EF4D5 /* Assets.xcassets */; };
 		0EBB3C951CCC4091005EF4D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBB3C931CCC4091005EF4D5 /* LaunchScreen.storyboard */; };
-		0EBB3CA01CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */; };
 		0EEC90E91D568CE200A29991 /* MarvelAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */; };
 		0EEC90EB1D56908300A29991 /* MarvelAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +39,6 @@
 		0EBB3C941CCC4091005EF4D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EBB3C961CCC4091005EF4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EBB3C9B1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MarvelBrowser-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelBrowser_SwiftTests.swift; sourceTree = "<group>"; };
 		0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
 		0EBB3CAA1CCC43B9005EF4D5 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAuthenticationTests.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				0EBB3C931CCC4091005EF4D5 /* LaunchScreen.storyboard */,
 				0EBB3C961CCC4091005EF4D5 /* Info.plist */,
 				0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */,
-				0EBB3C9F1CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift */,
 				0E469A461D28BA5E00FE7184 /* main.swift */,
 				0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */,
 				0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */,
@@ -220,7 +217,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EEC90E91D568CE200A29991 /* MarvelAuthenticationTests.swift in Sources */,
-				0EBB3CA01CCC4091005EF4D5 /* MarvelBrowser_SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
