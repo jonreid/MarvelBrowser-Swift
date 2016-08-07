@@ -33,6 +33,7 @@
 		0E469A461D28BA5E00FE7184 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		0E5325AE1D56B33E00CA326B /* MarvelKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelKey.swift; sourceTree = "<group>"; };
+		0E5325B01D56B8C500CA326B /* MarvelBrowser-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelBrowser-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		0EBB3C871CCC4090005EF4D5 /* MarvelBrowser-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarvelBrowser-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBB3C8A1CCC4091005EF4D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EBB3C8C1CCC4091005EF4D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 				0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */,
 				0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */,
 				0E5325AE1D56B33E00CA326B /* MarvelKey.swift */,
+				0E5325B01D56B8C500CA326B /* MarvelBrowser-Swift-Bridging-Header.h */,
 			);
 			path = "MarvelBrowser-Swift";
 			sourceTree = "<group>";
@@ -317,6 +319,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.MarvelBrowser-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelBrowser-Swift/MarvelBrowser-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -329,6 +332,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.MarvelBrowser-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelBrowser-Swift/MarvelBrowser-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
