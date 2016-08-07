@@ -5,20 +5,15 @@ import Foundation
 
 struct MarvelAuthentication {
     
+    var publicKey = MarvelKey.`public`
+    var privateKey = MarvelKey.`private`
+    
     var timestampClosure = {
         return String(Date.init().timeIntervalSinceReferenceDate)
     }
     
     var timestamp: String {
         return timestampClosure()
-    }
-    
-    var publicKey: String {
-        return MarvelKey.`public`
-    }
-    
-    var privateKey: String {
-        return MarvelKey.`private`
     }
     
     func md5(_ string: String) -> String {
