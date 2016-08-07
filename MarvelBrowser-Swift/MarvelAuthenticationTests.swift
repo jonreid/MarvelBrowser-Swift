@@ -18,8 +18,8 @@ class MarvelAuthenticationTests : XCTestCase {
     }
 
     func testTimestamp_ShouldChangeAcrossInvocations() {
-        let ts1 = sut.timestamp
-        let ts2 = sut.timestamp
+        let ts1 = sut.timestamp()
+        let ts2 = sut.timestamp()
         
         XCTAssertNotEqual(ts1, ts2);
     }
@@ -43,7 +43,7 @@ class MarvelAuthenticationTests : XCTestCase {
     }
     
     func testUrlParameters_ShouldHaveTimestampPublicKeyAndHashedConcatenation() {
-        sut.timestampClosure = { return "Timestamp" }
+        sut.timestamp = { return "Timestamp" }
         sut.privateKey = "Private"
         sut.publicKey = "Public"
         sut.md5Closure = { str in return "MD5" + str + "MD5" }

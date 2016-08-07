@@ -8,7 +8,7 @@ struct MarvelAuthentication {
     var publicKey = MarvelKey.`public`
     var privateKey = MarvelKey.`private`
     
-    var timestampClosure = {
+    var timestamp = {
         return String(Date.init().timeIntervalSinceReferenceDate)
     }
 
@@ -20,18 +20,14 @@ struct MarvelAuthentication {
         }
     }
 
-    var timestamp: String {
-        return timestampClosure()
-    }
-    
     func md5(_ string: String) -> String {
         return md5Closure(string)
     }
     
     var urlParameters: String {
-        let ts = timestamp
+        let ts = timestamp()
         let apikey = publicKey
-        let hash = md5(timestamp + privateKey + publicKey)
+        let hash = md5(timestamp() + privateKey + publicKey)
         return "&ts=\(ts)&apikey=\(apikey)&hash=\(hash)"
     }
     
