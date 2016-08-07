@@ -41,5 +41,16 @@ class MarvelAuthenticationTests : XCTestCase {
         
         XCTAssertEqual(md5, "900150983cd24fb0d6963f7d28e17f72")
     }
+    
+    func testUrlParameters_ShouldHaveTimestampPublicKeyAndHashedConcatenation() {
+        sut.timestampClosure = { return "Timestamp" }
+        sut.privateKey = "Private"
+        sut.publicKey = "Public"
+        sut.md5Closure = {str in return "MD5" + str + "MD5" }
+        
+        let params = sut.urlParameters
+        
+        XCTAssertEqual(params, "&ts=Timestamp&apikey=Public&hash=MD5TimestampPrivatePublicMD5")
+    }
 
 }

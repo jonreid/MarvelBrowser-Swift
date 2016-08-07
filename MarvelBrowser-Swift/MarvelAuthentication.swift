@@ -28,4 +28,8 @@ struct MarvelAuthentication {
         return md5Closure(string)
     }
     
+    var urlParameters: String {
+        return ""
+    }
+    
 }
