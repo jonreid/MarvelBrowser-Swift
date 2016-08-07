@@ -5,8 +5,12 @@ import Foundation
 
 struct MarvelAuthentication {
     
-    var timestamp: String {
+    var timestampClosure = {
         return String(Date.init().timeIntervalSinceReferenceDate)
+    }
+    
+    var timestamp: String {
+        return timestampClosure()
     }
     
     var publicKey: String {
