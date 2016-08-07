@@ -11,17 +11,21 @@ struct MarvelAuthentication {
     var timestampClosure = {
         return String(Date.init().timeIntervalSinceReferenceDate)
     }
+
+    var md5Closure: (String) -> String = {string in
+        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+        CC_MD5(string, CC_LONG(string.utf8.count), &digest)
+        return digest.reduce("") {
+            $0 + String(format: "%02x", $1)
+        }
+    }
     
     var timestamp: String {
         return timestampClosure()
     }
     
     func md5(_ string: String) -> String {
-        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-        CC_MD5(string, CC_LONG(string.utf8.count), &digest)
-        return digest.reduce("") {
-            $0 + String(format: "%02x", $1)
-        }
+        return md5Closure(string)
     }
     
 }
