@@ -5,10 +5,19 @@ import XCTest
 @testable import MarvelBrowser_Swift
 
 class MarvelAuthenticationTests : XCTestCase {
+    var sut: MarvelAuthentication!
+    
+    override func setUp() {
+        super.setUp()
+        sut = MarvelAuthentication()
+    }
+    
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
+    }
 
     func testTimestamp_ShouldChangeAcrossInvocations() {
-        let sut = MarvelAuthentication()
-
         let ts1 = sut.timestamp
         let ts2 = sut.timestamp
         
@@ -16,9 +25,7 @@ class MarvelAuthenticationTests : XCTestCase {
     }
     
     func testPublicKey_ShouldHave32Characters() {
-        let sut = MarvelAuthentication()
-
-        let key: String = sut.publicKey
+        let key = sut.publicKey
         
         XCTAssertEqual(key.characters.count, 32)
     }
