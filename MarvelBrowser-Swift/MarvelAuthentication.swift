@@ -13,4 +13,8 @@ struct MarvelAuthentication {
         return MarvelKey.`public`
     }
     
+    var privateKey: String {
+        return ""
+    }
+    
 }

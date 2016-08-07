@@ -29,5 +29,11 @@ class MarvelAuthenticationTests : XCTestCase {
         
         XCTAssertEqual(key.characters.count, 32)
     }
-
+    
+    func testPrivateKey_ShouldHave40Characters() {
+        let key = sut.privateKey
+        
+        XCTAssertEqual(key.characters.count, 40)
+    }
+    
 }
