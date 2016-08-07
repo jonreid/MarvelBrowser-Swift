@@ -46,7 +46,7 @@ class MarvelAuthenticationTests : XCTestCase {
         sut.timestamp = { return "Timestamp" }
         sut.privateKey = "Private"
         sut.publicKey = "Public"
-        sut.md5Closure = { str in return "MD5" + str + "MD5" }
+        sut.md5 = { str in return "MD5" + str + "MD5" }
         
         let params = sut.urlParameters
         

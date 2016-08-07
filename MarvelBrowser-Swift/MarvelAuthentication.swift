@@ -12,7 +12,7 @@ struct MarvelAuthentication {
         return String(Date.init().timeIntervalSinceReferenceDate)
     }
 
-    var md5Closure: (String) -> String = { str in
+    var md5: (String) -> String = { str in
         var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
         CC_MD5(str, CC_LONG(str.utf8.count), &digest)
         return digest.reduce("") {
@@ -20,10 +20,6 @@ struct MarvelAuthentication {
         }
     }
 
-    func md5(_ string: String) -> String {
-        return md5Closure(string)
-    }
-    
     var urlParameters: String {
         let ts = timestamp()
         let apikey = publicKey
