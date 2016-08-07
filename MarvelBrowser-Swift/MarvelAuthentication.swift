@@ -17,4 +17,8 @@ struct MarvelAuthentication {
         return MarvelKey.`private`
     }
     
+    func calculateMd5(_ string: String) -> String {
+        return ""
+    }
+    
 }

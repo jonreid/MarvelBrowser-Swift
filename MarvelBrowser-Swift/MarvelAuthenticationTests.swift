@@ -36,4 +36,10 @@ class MarvelAuthenticationTests : XCTestCase {
         XCTAssertEqual(key.characters.count, 40)
     }
     
+    func testtestMd5OfKnownString_ShouldYieldKnownResult() { // http://tools.ietf.org/html/rfc1321
+        let md5 = sut.calculateMd5("abc")
+        
+        XCTAssertEqual(md5, "900150983cd24fb0d6963f7d28e17f72")
+    }
+
 }
