@@ -4,6 +4,6 @@
 */
 
 enum MarvelKey {
-    static let Public = "YOUR_PUBLIC_KEY"
-    static let Private = "YOUR_PRIVATE_KEY"
+    static let `public` = "YOUR_PUBLIC_KEY"
+    static let `private` = "YOUR_PRIVATE_KEY"
 }

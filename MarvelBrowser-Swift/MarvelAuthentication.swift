@@ -10,7 +10,7 @@ struct MarvelAuthentication {
     }
     
     var publicKey: String {
-        return ""
+        return MarvelKey.`public`
     }
     
 }
