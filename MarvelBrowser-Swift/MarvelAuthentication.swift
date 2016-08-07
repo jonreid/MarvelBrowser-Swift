@@ -29,7 +29,10 @@ struct MarvelAuthentication {
     }
     
     var urlParameters: String {
-        return ""
+        let ts = timestamp
+        let apikey = publicKey
+        let hash = md5(timestamp + privateKey + publicKey)
+        return "&ts=\(ts)&apikey=\(apikey)&hash=\(hash)"
     }
     
 }
