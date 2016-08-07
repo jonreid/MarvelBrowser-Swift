@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E33864F1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E33864E1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift */; };
 		0E469A471D28BA5E00FE7184 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E469A461D28BA5E00FE7184 /* main.swift */; };
 		0E469A491D28BABE00FE7184 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */; };
 		0E5325AF1D56B33E00CA326B /* MarvelKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5325AE1D56B33E00CA326B /* MarvelKey.swift */; };
@@ -20,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0E3386441D57FF3E0017C58A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EBB3C7F1CCC4090005EF4D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EBB3C861CCC4090005EF4D5;
+			remoteInfo = "MarvelBrowser-Swift";
+		};
 		0EBB3C9C1CCC4091005EF4D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0EBB3C7F1CCC4090005EF4D5 /* Project object */;
@@ -30,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E33864C1D57FF3E0017C58A /* AcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E33864E1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAuthenticationAcceptanceTests.swift; sourceTree = "<group>"; };
 		0E469A461D28BA5E00FE7184 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		0E5325AE1D56B33E00CA326B /* MarvelKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelKey.swift; sourceTree = "<group>"; };
@@ -49,6 +59,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E3386471D57FF3E0017C58A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EBB3C841CCC4090005EF4D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,6 +99,7 @@
 			children = (
 				0EBB3C871CCC4090005EF4D5 /* MarvelBrowser-Swift.app */,
 				0EBB3C9B1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests.xctest */,
+				0E33864C1D57FF3E0017C58A /* AcceptanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +118,7 @@
 				0E469A461D28BA5E00FE7184 /* main.swift */,
 				0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */,
 				0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */,
+				0E33864E1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift */,
 				0E5325AE1D56B33E00CA326B /* MarvelKey.swift */,
 				0E5325B01D56B8C500CA326B /* MarvelBrowser-Swift-Bridging-Header.h */,
 			);
@@ -109,6 +128,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E3386421D57FF3E0017C58A /* AcceptanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E3386491D57FF3E0017C58A /* Build configuration list for PBXNativeTarget "AcceptanceTests" */;
+			buildPhases = (
+				0E3386451D57FF3E0017C58A /* Sources */,
+				0E3386471D57FF3E0017C58A /* Frameworks */,
+				0E3386481D57FF3E0017C58A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E3386431D57FF3E0017C58A /* PBXTargetDependency */,
+			);
+			name = AcceptanceTests;
+			productName = "MarvelBrowser-SwiftTests";
+			productReference = 0E33864C1D57FF3E0017C58A /* AcceptanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0EBB3C861CCC4090005EF4D5 /* MarvelBrowser-Swift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EBB3CA41CCC4091005EF4D5 /* Build configuration list for PBXNativeTarget "MarvelBrowser-Swift" */;
@@ -180,11 +217,19 @@
 			targets = (
 				0EBB3C861CCC4090005EF4D5 /* MarvelBrowser-Swift */,
 				0EBB3C9A1CCC4091005EF4D5 /* MarvelBrowser-SwiftTests */,
+				0E3386421D57FF3E0017C58A /* AcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E3386481D57FF3E0017C58A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EBB3C851CCC4090005EF4D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +250,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E3386451D57FF3E0017C58A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E33864F1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EBB3C831CCC4090005EF4D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +282,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0E3386431D57FF3E0017C58A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EBB3C861CCC4090005EF4D5 /* MarvelBrowser-Swift */;
+			targetProxy = 0E3386441D57FF3E0017C58A /* PBXContainerItemProxy */;
+		};
 		0EBB3C9D1CCC4091005EF4D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0EBB3C861CCC4090005EF4D5 /* MarvelBrowser-Swift */;
@@ -256,6 +314,33 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E33864A1D57FF3E0017C58A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "MarvelBrowser-Swift/Info-Tests.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.AcceptanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowser-Swift.app/MarvelBrowser-Swift";
+			};
+			name = Debug;
+		};
+		0E33864B1D57FF3E0017C58A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "MarvelBrowser-Swift/Info-Tests.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.AcceptanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowser-Swift.app/MarvelBrowser-Swift";
+			};
+			name = Release;
+		};
 		0EBB3CA21CCC4091005EF4D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EBB3CAA1CCC43B9005EF4D5 /* XcodeWarnings.xcconfig */;
@@ -368,6 +453,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E3386491D57FF3E0017C58A /* Build configuration list for PBXNativeTarget "AcceptanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E33864A1D57FF3E0017C58A /* Debug */,
+				0E33864B1D57FF3E0017C58A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0EBB3C821CCC4090005EF4D5 /* Build configuration list for PBXProject "MarvelBrowser-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
