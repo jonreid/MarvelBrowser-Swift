@@ -6,8 +6,31 @@ import XCTest
 
 class MarvelAuthenticationAcceptanceTests : XCTestCase {
 
-    func testShouldFail() {
-        XCTFail()
+    func testValidCallToMarvel_ShouldGetHTTPStatusCode200() {
+        let queryWithoutAuth = "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider"
+        let fullQuery = queryWithoutAuth + MarvelAuthentication.init().urlParameters
+        guard let validQueryUrl = URL(string: fullQuery) else {
+            XCTFail("Invalid URL '\(fullQuery)'")
+            return
+        }
+        let promise = expectation(description: "Status code: 200")
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: validQueryUrl) { data, response, error in
+            if error != nil {
+                XCTFail("Error: \(error!.localizedDescription)")
+                return
+            }
+            let statusCode = (response as! HTTPURLResponse).statusCode
+            if statusCode == 200 {
+                promise.fulfill()
+            } else {
+                XCTFail("Status code: \(statusCode)")
+            }
+        }
+        dataTask.resume()
+        
+        self.waitForExpectations(timeout: 5, handler: nil)
     }
     
 }
