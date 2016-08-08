@@ -13,10 +13,9 @@ class MarvelAuthenticationAcceptanceTests : XCTestCase {
             XCTFail("Invalid URL '\(fullQuery)'")
             return
         }
-        let promise = expectation(description: "Status code: 200")
         
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: validQueryUrl) { data, response, error in
+        let promise = expectation(description: "Status code: 200")
+        startDataTask(with: validQueryUrl) { data, response, error in
             if error != nil {
                 XCTFail("Error: \(error!.localizedDescription)")
                 return
@@ -28,9 +27,16 @@ class MarvelAuthenticationAcceptanceTests : XCTestCase {
                 XCTFail("Status code: \(statusCode)")
             }
         }
-        dataTask.resume()
         
         self.waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    private func startDataTask(with url: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void) {
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url) { data, response, error in
+            completionHandler(data, response, error)
+        }
+        dataTask.resume()
     }
     
 }
