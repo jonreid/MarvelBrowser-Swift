@@ -17,13 +17,6 @@ class MarvelAuthenticationTests : XCTestCase {
         super.tearDown()
     }
 
-    func testTimestamp_ShouldChangeAcrossInvocations() {
-        let ts1 = sut.timestamp()
-        let ts2 = sut.timestamp()
-        
-        XCTAssertNotEqual(ts1, ts2);
-    }
-    
     func testPublicKey_ShouldHave32Characters() {
         let key = sut.publicKey
         
@@ -57,4 +50,11 @@ class MarvelAuthenticationTests : XCTestCase {
         XCTAssertEqual(params, "&ts=Timestamp1&apikey=Public&hash=MD5Timestamp1PrivatePublicMD5")
     }
 
+    func testUrlParameters_ShouldChangeAcrossInvocations() {
+        let params1 = sut.urlParameters
+        let params2 = sut.urlParameters
+        
+        XCTAssertNotEqual(params1, params2);
+    }
+    
 }
