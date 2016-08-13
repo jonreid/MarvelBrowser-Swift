@@ -30,17 +30,18 @@ class MarvelAuthenticationTests : XCTestCase {
     }
     
     func testMd5OfKnownString_ShouldYieldKnownResult() { // http://tools.ietf.org/html/rfc1321
-        let md5 = sut.md5("abc")
+        let md5Result = md5("abc")
         
-        XCTAssertEqual(md5, "900150983cd24fb0d6963f7d28e17f72")
+        XCTAssertEqual(md5Result, "900150983cd24fb0d6963f7d28e17f72")
     }
     
     func testUrlParameters_ShouldHaveTimestampPublicKeyAndHashedConcatenation() {
         sut.privateKey = "Private"
         sut.publicKey = "Public"
-        sut.md5 = { str in return "MD5" + str + "MD5" }
         
-        let params = sut.urlParameters(timestamp: "Timestamp")
+        let params = sut.urlParameters(timestamp: "Timestamp") { str in
+            return "MD5" + str + "MD5"
+        }
         
         XCTAssertEqual(params, "&ts=Timestamp&apikey=Public&hash=MD5TimestampPrivatePublicMD5")
     }
