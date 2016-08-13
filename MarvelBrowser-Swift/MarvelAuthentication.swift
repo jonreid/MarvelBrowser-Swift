@@ -16,9 +16,13 @@ struct MarvelAuthentication {
         }
     }
 
-    func urlParameters(timestamp: String = String(Date.init().timeIntervalSinceReferenceDate)) -> String {
+    func urlParameters(timestamp: String = MarvelAuthentication.timestamp()) -> String {
         let hash = md5(timestamp + privateKey + publicKey)
         return "&ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)"
+    }
+    
+    private static func timestamp() -> String {
+        return String(Date.init().timeIntervalSinceReferenceDate)
     }
     
 }
