@@ -8,7 +8,7 @@ class MarvelAuthenticationAcceptanceTests : XCTestCase {
 
     func testValidCallToMarvel_ShouldGetHTTPStatusCode200() {
         let queryWithoutAuth = "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider"
-        let fullQuery = queryWithoutAuth + MarvelAuthentication.init().urlParameters
+        let fullQuery = queryWithoutAuth + MarvelAuthentication.init().urlParameters()
         guard let validQueryUrl = URL(string: fullQuery) else {
             XCTFail("Invalid URL '\(fullQuery)'")
             return

@@ -20,7 +20,7 @@ struct MarvelAuthentication {
         }
     }
 
-    var urlParameters: String {
+    func urlParameters() -> String {
         let ts = timestamp()
         let hash = md5(ts + privateKey + publicKey)
         return "&ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"

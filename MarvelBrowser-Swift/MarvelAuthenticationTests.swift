@@ -45,14 +45,14 @@ class MarvelAuthenticationTests : XCTestCase {
         sut.publicKey = "Public"
         sut.md5 = { str in return "MD5" + str + "MD5" }
         
-        let params = sut.urlParameters
+        let params = sut.urlParameters()
         
         XCTAssertEqual(params, "&ts=Timestamp1&apikey=Public&hash=MD5Timestamp1PrivatePublicMD5")
     }
 
     func testUrlParameters_ShouldChangeAcrossInvocations() {
-        let params1 = sut.urlParameters
-        let params2 = sut.urlParameters
+        let params1 = sut.urlParameters()
+        let params2 = sut.urlParameters()
         
         XCTAssertNotEqual(params1, params2);
     }
