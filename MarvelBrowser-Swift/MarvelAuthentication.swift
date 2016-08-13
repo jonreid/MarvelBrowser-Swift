@@ -8,10 +8,6 @@ struct MarvelAuthentication {
     var publicKey = MarvelKey.`public`
     var privateKey = MarvelKey.`private`
     
-    var timestamp = {
-        return String(Date.init().timeIntervalSinceReferenceDate)
-    }
-
     var md5: (String) -> String = { str in
         var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
         CC_MD5(str, CC_LONG(str.utf8.count), &digest)
@@ -20,10 +16,9 @@ struct MarvelAuthentication {
         }
     }
 
-    func urlParameters() -> String {
-        let ts = timestamp()
-        let hash = md5(ts + privateKey + publicKey)
-        return "&ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+    func urlParameters(timestamp: String = String(Date.init().timeIntervalSinceReferenceDate)) -> String {
+        let hash = md5(timestamp + privateKey + publicKey)
+        return "&ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)"
     }
     
 }
