@@ -3,9 +3,11 @@
 
 import UIKit
 
+let argsCount = Int(CommandLine.argc)
+let argsRawPointer = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
+let args = argsRawPointer.bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: argsCount)
+
 let isRunningTests = NSClassFromString("XCTestCase") != nil
 let appDelegateClass: AnyClass = isRunningTests ? TestingAppDelegate.self : AppDelegate.self
-UIApplicationMain(Process.argc,
-        UnsafeMutablePointer<UnsafeMutablePointer<CChar>>(Process.unsafeArgv),
-        nil,
-        NSStringFromClass(appDelegateClass))
+
+UIApplicationMain(CommandLine.argc, args, nil, NSStringFromClass(appDelegateClass))

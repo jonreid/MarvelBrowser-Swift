@@ -31,7 +31,7 @@ class MarvelAuthenticationAcceptanceTests : XCTestCase {
         self.waitForExpectations(timeout: 5, handler: nil)
     }
     
-    private func startDataTask(with url: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void) {
+    private func startDataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url) { data, response, error in
             completionHandler(data, response, error)
