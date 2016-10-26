@@ -3,11 +3,8 @@
 
 import UIKit
 
-let argsCount = Int(CommandLine.argc)
-let argsRawPointer = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
-let args = argsRawPointer.bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: argsCount)
-
-let isRunningTests = NSClassFromString("XCTestCase") != nil
-let appDelegateClass: AnyClass = isRunningTests ? TestingAppDelegate.self : AppDelegate.self
-
-UIApplicationMain(CommandLine.argc, args, nil, NSStringFromClass(appDelegateClass))
+let appDelegateClass: AnyClass? =
+    NSClassFromString("MarvelBrowser_SwiftTests.TestingAppDelegate") ?? AppDelegate.self
+let args = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
+    .bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
+UIApplicationMain(CommandLine.argc, args, nil, NSStringFromClass(appDelegateClass!))
