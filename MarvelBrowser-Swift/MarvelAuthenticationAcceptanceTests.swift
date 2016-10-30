@@ -13,22 +13,19 @@ class MarvelAuthenticationAcceptanceTests : XCTestCase {
             XCTFail("Invalid URL '\(fullQuery)'")
             return
         }
-        
-        let promise = expectation(description: "Status code: 200")
+
+        var httpResponse: HTTPURLResponse?
+        var responseError: Error?
+        let promise = expectation(description: "Completion handler invoked")
         startDataTask(with: validQueryUrl) { data, response, error in
-            if error != nil {
-                XCTFail("Error: \(error!.localizedDescription)")
-                return
-            }
-            let statusCode = (response as! HTTPURLResponse).statusCode
-            if statusCode == 200 {
-                promise.fulfill()
-            } else {
-                XCTFail("Status code: \(statusCode)")
-            }
+            httpResponse = response as? HTTPURLResponse
+            responseError = error
+            promise.fulfill()
         }
-        
         self.waitForExpectations(timeout: 5, handler: nil)
+
+        XCTAssertNil(responseError)
+        XCTAssertEqual(httpResponse?.statusCode, 200)
     }
     
     private func startDataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
