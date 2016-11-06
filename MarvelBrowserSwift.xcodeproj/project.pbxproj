@@ -18,6 +18,7 @@
 		0EEC90E91D568CE200A29991 /* MarvelAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */; };
 		0EEC90EB1D56908300A29991 /* MarvelAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */; };
 		4873A2371DC05E5400E8C9A2 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */; };
+		489822AD1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		0EBB3CAA1CCC43B9005EF4D5 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAuthenticationTests.swift; sourceTree = "<group>"; };
 		0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAuthentication.swift; sourceTree = "<group>"; };
+		489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCharactersMarvelServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */,
 				0E33864E1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift */,
 				0E5325AE1D56B33E00CA326B /* MarvelKey.swift */,
+				489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */,
 				489822A71DCFE45D0073D820 /* Supporting Files */,
 			);
 			path = MarvelBrowserSwift;
@@ -284,6 +287,7 @@
 			files = (
 				0EEC90E91D568CE200A29991 /* MarvelAuthenticationTests.swift in Sources */,
 				4873A2371DC05E5400E8C9A2 /* TestingAppDelegate.swift in Sources */,
+				489822AD1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
