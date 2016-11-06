@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EBB3C861CCC4090005EF4D5"
-               BuildableName = "MarvelBrowser-Swift.app"
-               BlueprintName = "MarvelBrowser-Swift"
-               ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+               BuildableName = "MarvelBrowserSwift.app"
+               BlueprintName = "MarvelBrowserSwift"
+               ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EBB3C9A1CCC4091005EF4D5"
-               BuildableName = "MarvelBrowser-SwiftTests.xctest"
-               BlueprintName = "MarvelBrowser-SwiftTests"
-               ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+               BuildableName = "MarvelBrowserSwiftTests.xctest"
+               BlueprintName = "MarvelBrowserSwiftTests"
+               ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EBB3C861CCC4090005EF4D5"
-            BuildableName = "MarvelBrowser-Swift.app"
-            BlueprintName = "MarvelBrowser-Swift"
-            ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+            BuildableName = "MarvelBrowserSwift.app"
+            BlueprintName = "MarvelBrowserSwift"
+            ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EBB3C861CCC4090005EF4D5"
-            BuildableName = "MarvelBrowser-Swift.app"
-            BlueprintName = "MarvelBrowser-Swift"
-            ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+            BuildableName = "MarvelBrowserSwift.app"
+            BlueprintName = "MarvelBrowserSwift"
+            ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -92,9 +92,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EBB3C861CCC4090005EF4D5"
-            BuildableName = "MarvelBrowser-Swift.app"
-            BlueprintName = "MarvelBrowser-Swift"
-            ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+            BuildableName = "MarvelBrowserSwift.app"
+            BlueprintName = "MarvelBrowserSwift"
+            ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

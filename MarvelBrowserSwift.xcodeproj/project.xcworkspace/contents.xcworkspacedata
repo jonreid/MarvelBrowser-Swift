@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MarvelBrowser-Swift.xcodeproj">
+      location = "self:/Users/jmreid/Development/MarvelBrowser-Swift/MarvelBrowserSwift.xcodeproj">
    </FileRef>
 </Workspace>

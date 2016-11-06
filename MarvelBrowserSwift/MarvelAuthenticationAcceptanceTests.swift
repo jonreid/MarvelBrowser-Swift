@@ -2,7 +2,7 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 import XCTest
-@testable import MarvelBrowser_Swift
+@testable import MarvelBrowserSwift
 
 class MarvelAuthenticationAcceptanceTests : XCTestCase {
 

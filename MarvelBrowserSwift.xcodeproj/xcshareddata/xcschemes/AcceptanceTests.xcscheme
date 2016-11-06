@@ -7,14 +7,17 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
+            buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForTesting = "YES">
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0E3386421D57FF3E0017C58A"
                BuildableName = "AcceptanceTests.xctest"
                BlueprintName = "AcceptanceTests"
-               ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+               ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +35,19 @@
                BlueprintIdentifier = "0E3386421D57FF3E0017C58A"
                BuildableName = "AcceptanceTests.xctest"
                BlueprintName = "AcceptanceTests"
-               ReferencedContainer = "container:MarvelBrowser-Swift.xcodeproj">
+               ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0E3386421D57FF3E0017C58A"
+            BuildableName = "AcceptanceTests.xctest"
+            BlueprintName = "AcceptanceTests"
+            ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -49,8 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0E3386421D57FF3E0017C58A"
+            BuildableName = "AcceptanceTests.xctest"
+            BlueprintName = "AcceptanceTests"
+            ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
@@ -58,6 +77,8 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -65,6 +86,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0E3386421D57FF3E0017C58A"
+            BuildableName = "AcceptanceTests.xctest"
+            BlueprintName = "AcceptanceTests"
+            ReferencedContainer = "container:MarvelBrowserSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
