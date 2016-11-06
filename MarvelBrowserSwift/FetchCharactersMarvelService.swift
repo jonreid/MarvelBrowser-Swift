@@ -9,6 +9,8 @@ extension URLSession: URLSessionProtocol {}
 
 class FetchCharactersMarvelService {
     init(session: URLSessionProtocol) {
+    }
 
+    func fetchCharacters(requestModel: FetchCharactersRequestModel) {
     }
 }

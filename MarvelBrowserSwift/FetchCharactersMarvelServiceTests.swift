@@ -12,6 +12,8 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         let mockURLSession = MockURLSession()
         let sut = FetchCharactersMarvelService(session: mockURLSession)
         let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
+
+        sut.fetchCharacters(requestModel: requestModel)
     }
 
 }
