@@ -5,7 +5,10 @@ import XCTest
 @testable import MarvelBrowserSwift
 
 class MockURLSession: URLSessionProtocol {
+    var dataTaskCallCount = 0
+
     func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
+        dataTaskCallCount += 1
         return URLSessionDataTask()
     }
 }
@@ -18,6 +21,8 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
 
         sut.fetchCharacters(requestModel: requestModel)
+
+        XCTAssertEqual(mockURLSession.dataTaskCallCount, 1)
     }
 
 }
