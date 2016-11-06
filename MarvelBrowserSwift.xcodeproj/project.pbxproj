@@ -20,6 +20,7 @@
 		4873A2371DC05E5400E8C9A2 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */; };
 		489822AD1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */; };
 		BB1706A10985951BF01415C0 /* FetchCharactersMarvelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170721EC25C3B61E99CE97 /* FetchCharactersMarvelService.swift */; };
+		BB170C85FEAEA7D89E17614F /* FetchCharactersRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1709BEA0BF75D6CB0A3081 /* FetchCharactersRequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAuthentication.swift; sourceTree = "<group>"; };
 		489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCharactersMarvelServiceTests.swift; sourceTree = "<group>"; };
 		BB170721EC25C3B61E99CE97 /* FetchCharactersMarvelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCharactersMarvelService.swift; sourceTree = "<group>"; };
+		BB1709BEA0BF75D6CB0A3081 /* FetchCharactersRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCharactersRequestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				BB170721EC25C3B61E99CE97 /* FetchCharactersMarvelService.swift */,
 				489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */,
 				489822A71DCFE45D0073D820 /* Supporting Files */,
+				BB1709BEA0BF75D6CB0A3081 /* FetchCharactersRequestModel.swift */,
 			);
 			path = MarvelBrowserSwift;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				0EBB3C8B1CCC4091005EF4D5 /* AppDelegate.swift in Sources */,
 				0E469A471D28BA5E00FE7184 /* main.swift in Sources */,
 				BB1706A10985951BF01415C0 /* FetchCharactersMarvelService.swift in Sources */,
+				BB170C85FEAEA7D89E17614F /* FetchCharactersRequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

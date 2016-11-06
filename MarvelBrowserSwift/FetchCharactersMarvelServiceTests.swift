@@ -11,6 +11,7 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
     func testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint() {
         let mockURLSession = MockURLSession()
         let sut = FetchCharactersMarvelService(session: mockURLSession)
+        let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
     }
 
 }
