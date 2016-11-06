@@ -4,7 +4,11 @@
 import XCTest
 @testable import MarvelBrowserSwift
 
-class MockURLSession: URLSessionProtocol {}
+class MockURLSession: URLSessionProtocol {
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
+        return URLSessionDataTask()
+    }
+}
 
 class FetchCharactersMarvelServiceTests : XCTestCase {
 

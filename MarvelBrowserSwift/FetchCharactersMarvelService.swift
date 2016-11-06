@@ -3,9 +3,12 @@
 
 import Foundation
 
-protocol URLSessionProtocol {}
+protocol URLSessionProtocol {
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask
+}
 
-extension URLSession: URLSessionProtocol {}
+extension URLSession: URLSessionProtocol {
+}
 
 class FetchCharactersMarvelService {
     init(session: URLSessionProtocol) {
