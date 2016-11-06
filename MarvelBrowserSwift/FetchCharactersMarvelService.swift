@@ -3,8 +3,12 @@
 
 import Foundation
 
+protocol URLSessionProtocol {}
+
+extension URLSession: URLSessionProtocol {}
+
 class FetchCharactersMarvelService {
-    init(session: URLSession) {
+    init(session: URLSessionProtocol) {
 
     }
 }
