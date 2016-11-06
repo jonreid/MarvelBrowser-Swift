@@ -113,16 +113,24 @@
 				0EBB3C8E1CCC4091005EF4D5 /* Main.storyboard */,
 				0EBB3C911CCC4091005EF4D5 /* Assets.xcassets */,
 				0EBB3C931CCC4091005EF4D5 /* LaunchScreen.storyboard */,
-				0EBB3C961CCC4091005EF4D5 /* Info.plist */,
-				0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */,
-				0E469A461D28BA5E00FE7184 /* main.swift */,
 				0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */,
 				0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */,
 				0E33864E1D5801580017C58A /* MarvelAuthenticationAcceptanceTests.swift */,
 				0E5325AE1D56B33E00CA326B /* MarvelKey.swift */,
-				0E5325B01D56B8C500CA326B /* MarvelBrowser-Swift-Bridging-Header.h */,
+				489822A71DCFE45D0073D820 /* Supporting Files */,
 			);
 			path = "MarvelBrowser-Swift";
+			sourceTree = "<group>";
+		};
+		489822A71DCFE45D0073D820 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EBB3C961CCC4091005EF4D5 /* Info.plist */,
+				0EBB3CA11CCC4091005EF4D5 /* Info-Tests.plist */,
+				0E469A461D28BA5E00FE7184 /* main.swift */,
+				0E5325B01D56B8C500CA326B /* MarvelBrowser-Swift-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
