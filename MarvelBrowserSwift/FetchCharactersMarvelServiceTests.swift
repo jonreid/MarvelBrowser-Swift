@@ -4,10 +4,13 @@
 import XCTest
 @testable import MarvelBrowserSwift
 
+class MockURLSession: URLSessionProtocol {}
+
 class FetchCharactersMarvelServiceTests : XCTestCase {
 
     func testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint() {
-        let sut = FetchCharactersMarvelService(session: URLSession.shared)
+        let mockURLSession = MockURLSession()
+        let sut = FetchCharactersMarvelService(session: mockURLSession)
     }
 
 }
