@@ -11,9 +11,14 @@ extension URLSession: URLSessionProtocol {
 }
 
 class FetchCharactersMarvelService {
+    private let session: URLSessionProtocol
+
     init(session: URLSessionProtocol) {
+        self.session = session
     }
 
     func fetchCharacters(requestModel: FetchCharactersRequestModel) {
+        guard let url = URL(string: "http://BOGUS") else { return }
+        self.session.dataTask(with: url) { data, response, error in  }
     }
 }
