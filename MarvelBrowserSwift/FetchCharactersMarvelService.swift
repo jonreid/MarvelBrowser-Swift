@@ -7,8 +7,7 @@ protocol URLSessionProtocol {
     func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask
 }
 
-extension URLSession: URLSessionProtocol {
-}
+extension URLSession: URLSessionProtocol {}
 
 class FetchCharactersMarvelService {
     private let session: URLSessionProtocol
@@ -19,6 +18,6 @@ class FetchCharactersMarvelService {
 
     func fetchCharacters(requestModel: FetchCharactersRequestModel) {
         guard let url = URL(string: "http://gateway.marvel.com") else { return }
-//        _ = self.session.dataTask(with: url) { data, response, error in  }
+        _ = self.session.dataTask(with: url) { data, response, error in  }
     }
 }
