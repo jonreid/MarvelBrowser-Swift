@@ -18,7 +18,7 @@ class FetchCharactersMarvelService {
     }
 
     func fetchCharacters(requestModel: FetchCharactersRequestModel) {
-        guard let url = URL(string: "http://gateway.marvel.com") else { return }
+        guard let url = URL(string: "http://gateway.marvel.comBOGUS") else { return }
         _ = self.session.dataTask(with: url) { data, response, error in  }
     }
 }

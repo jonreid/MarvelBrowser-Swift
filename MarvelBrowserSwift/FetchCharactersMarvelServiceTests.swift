@@ -16,7 +16,7 @@ class MockURLSession: URLSessionProtocol {
 
     func verifyDataTask(urlMatcher: ((URL?) -> Bool)) {
         XCTAssertEqual(dataTaskCallCount, 1)
-        XCTAssertTrue(urlMatcher(dataTaskURL))
+        XCTAssertTrue(urlMatcher(dataTaskURL), "Actual URL was \(dataTaskURL)")
     }
 }
 
@@ -29,7 +29,7 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
 
         sut.fetchCharacters(requestModel: requestModel)
 
-        mockURLSession.verifyDataTask(urlMatcher: { url in url?.host ==  "gateway.marvel.com" })
+        mockURLSession.verifyDataTask(urlMatcher: { url in url?.host == "gateway.marvel.com" })
     }
 
 }
