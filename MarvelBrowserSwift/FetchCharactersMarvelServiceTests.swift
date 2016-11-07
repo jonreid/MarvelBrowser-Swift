@@ -15,7 +15,7 @@ class MockURLSession: URLSessionProtocol {
     }
 
     func verifyDataTask(urlMatcher: ((URL?) -> Bool)) {
-        XCTAssertEqual(dataTaskCallCount, 1)
+        XCTAssertEqual(dataTaskCallCount, 1, "call count")
         XCTAssertTrue(urlMatcher(dataTaskURL), "Actual URL was \(dataTaskURL)")
     }
 }
