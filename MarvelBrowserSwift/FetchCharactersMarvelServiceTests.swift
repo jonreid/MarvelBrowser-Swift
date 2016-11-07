@@ -5,13 +5,18 @@ import XCTest
 @testable import MarvelBrowserSwift
 
 class MockURLSession: URLSessionProtocol {
-    var dataTaskCallCount = 0
-    var dataTaskURL: URL?
+    private var dataTaskCallCount = 0
+    private var dataTaskURL: URL?
 
     func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
         dataTaskCallCount += 1
         dataTaskURL = url
         return URLSessionDataTask()
+    }
+
+    func verifyDataTask(urlMatcher: ((URL?) -> Bool)) {
+        XCTAssertEqual(dataTaskCallCount, 1)
+        XCTAssertTrue(urlMatcher(dataTaskURL))
     }
 }
 
@@ -24,8 +29,7 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
 
         sut.fetchCharacters(requestModel: requestModel)
 
-        XCTAssertEqual(mockURLSession.dataTaskCallCount, 1)
-        XCTAssertEqual(mockURLSession.dataTaskURL?.host, "gateway.marvel.com")
+        mockURLSession.verifyDataTask(urlMatcher: { url in url?.host ==  "gateway.marvel.com" })
     }
 
 }
