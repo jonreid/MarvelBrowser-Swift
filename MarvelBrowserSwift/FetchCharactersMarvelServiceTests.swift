@@ -6,17 +6,17 @@ import XCTest
 
 class MockURLSession: URLSessionProtocol {
     private var dataTaskCallCount = 0
-    private var dataTaskURL: URL?
+    private var dataTaskLastURL: URL?
 
     func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
         dataTaskCallCount += 1
-        dataTaskURL = url
+        dataTaskLastURL = url
         return URLSessionDataTask()
     }
 
     func verifyDataTask(urlMatcher: ((URL?) -> Bool), file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(dataTaskCallCount, 1, "call count", file: file, line: line)
-        XCTAssertTrue(urlMatcher(dataTaskURL), "Actual URL was \(dataTaskURL)", file: file, line: line)
+        XCTAssertTrue(urlMatcher(dataTaskLastURL), "Actual URL was \(dataTaskLastURL)", file: file, line: line)
     }
 }
 
