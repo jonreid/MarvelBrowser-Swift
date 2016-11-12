@@ -21,23 +21,33 @@ class MockURLSession: URLSessionProtocol {
 }
 
 class FetchCharactersMarvelServiceTests : XCTestCase {
+    var mockURLSession: MockURLSession!
+    var sut: FetchCharactersMarvelService!
+
+    override func setUp() {
+        super.setUp()
+        mockURLSession = MockURLSession()
+        sut = FetchCharactersMarvelService(session: mockURLSession)
+    }
+
+    override func tearDown() {
+        mockURLSession = nil
+        sut = nil
+        super.tearDown()
+    }
+
+    private func dummyRequestModel() -> FetchCharactersRequestModel {
+        return FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
+    }
 
     func testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint() {
-        let mockURLSession = MockURLSession()
-        let sut = FetchCharactersMarvelService(session: mockURLSession)
-        let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
-
-        sut.fetchCharacters(requestModel: requestModel)
+        sut.fetchCharacters(requestModel: dummyRequestModel())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.host == "gateway.marvel.com" })
     }
 
     func testFetchCharacters_ShouldMakeDataTaskWithSecureConnection() {
-        let mockURLSession = MockURLSession()
-        let sut = FetchCharactersMarvelService(session: mockURLSession)
-        let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
-
-        sut.fetchCharacters(requestModel: requestModel)
+        sut.fetchCharacters(requestModel: dummyRequestModel())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.scheme == "https" })
     }
