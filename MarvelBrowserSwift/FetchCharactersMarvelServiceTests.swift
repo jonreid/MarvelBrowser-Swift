@@ -102,6 +102,11 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         let sutWithAuthParameters = FetchCharactersMarvelService(session: mockURLSession,
                 authParametersGenerator: { return "&FOO=BAR" })
 
+        sutWithAuthParameters.fetchCharacters(requestModel: dummyRequestModel())
+
+        mockURLSession.verifyDataTask(urlMatcher: { url in
+            url?.hasQuery(name: "FOO", value: "BAR") ?? false
+        })
     }
 
 }
