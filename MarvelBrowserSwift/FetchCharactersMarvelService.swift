@@ -12,7 +12,7 @@ extension URLSession: URLSessionProtocol {}
 struct FetchCharactersMarvelService {
     private let session: URLSessionProtocol
 
-    init(session: URLSessionProtocol) {
+    init(session: URLSessionProtocol, authParametersGenerator: () -> String) {
         self.session = session
     }
 

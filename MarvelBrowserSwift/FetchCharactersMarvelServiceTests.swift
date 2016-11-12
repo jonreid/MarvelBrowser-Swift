@@ -27,7 +27,7 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
     override func setUp() {
         super.setUp()
         mockURLSession = MockURLSession()
-        sut = FetchCharactersMarvelService(session: mockURLSession)
+        sut = FetchCharactersMarvelService(session: mockURLSession, authParametersGenerator: { return "" })
     }
 
     override func tearDown() {
@@ -96,6 +96,12 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "offset", value: "30") ?? false
         })
+    }
+
+    func testFetchCharacters_ShouldIncludeGeneratedAuthenticationParameters() {
+        let sutWithAuthParameters = FetchCharactersMarvelService(session: mockURLSession,
+                authParametersGenerator: { return "&FOO=BAR" })
+
     }
 
 }
