@@ -63,11 +63,9 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
 
         sut.fetchCharacters(requestModel: requestModel)
 
-        mockURLSession.verifyDataTask(urlMatcher: { maybeURL in
-            guard let url = maybeURL else {
-                return false
-            }
-            return url.hasQuery(name: "nameStartsWith", value: "NAME") })
+        mockURLSession.verifyDataTask(urlMatcher: { url in
+            url?.hasQuery(name: "nameStartsWith", value: "NAME") ?? false
+        })
     }
 
     func testFetchCharacters_WithNamePrefix_ShouldHandleSpacesInNameStartsWith() {
@@ -75,11 +73,9 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
 
         sut.fetchCharacters(requestModel: requestModel)
 
-        mockURLSession.verifyDataTask(urlMatcher: { maybeURL in
-            guard let url = maybeURL else {
-                return false
-            }
-            return url.hasQuery(name: "nameStartsWith", value: "ab cd") })
+        mockURLSession.verifyDataTask(urlMatcher: { url in
+            url?.hasQuery(name: "nameStartsWith", value: "ab cd") ?? false
+        })
     }
 
 }
