@@ -19,16 +19,20 @@ struct FetchCharactersMarvelService {
     }
 
     func fetchCharacters(requestModel: FetchCharactersRequestModel) {
-        guard let namePrefix = requestModel.namePrefix.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            return
-        }
-        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters" +
-                "?nameStartsWith=\(namePrefix)" +
-                "&limit=\(requestModel.pageSize)" +
-                "&offset=\(requestModel.offset)" +
-                authParametersGenerator()) else {
+        guard let url = makeURL(requestModel: requestModel) else {
             return
         }
         _ = self.session.dataTask(with: url) { data, response, error in  }
+    }
+
+    private func makeURL(requestModel: FetchCharactersRequestModel) -> URL? {
+        guard let namePrefix = requestModel.namePrefix.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return nil
+        }
+        return URL(string: "https://gateway.marvel.com/v1/public/characters" +
+                "?nameStartsWith=\(namePrefix)" +
+                "&limit=\(requestModel.pageSize)" +
+                "&offset=\(requestModel.offset)" +
+                authParametersGenerator())
     }
 }
