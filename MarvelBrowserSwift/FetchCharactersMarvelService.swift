@@ -20,7 +20,9 @@ struct FetchCharactersMarvelService {
         guard let namePrefix = requestModel.namePrefix.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
-        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?nameStartsWith=\(namePrefix)") else {
+        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters" +
+                "?nameStartsWith=\(namePrefix)" +
+                "&limit=\(requestModel.pageSize)") else {
             return
         }
         _ = self.session.dataTask(with: url) { data, response, error in  }

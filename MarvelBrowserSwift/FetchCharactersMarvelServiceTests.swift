@@ -78,4 +78,14 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         })
     }
 
+    func testFetchCharacters_WithPageSize_ShouldMakeDataTaskWithQueryForLimit() {
+        let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
+
+        sut.fetchCharacters(requestModel: requestModel)
+
+        mockURLSession.verifyDataTask(urlMatcher: { url in
+            url?.hasQuery(name: "limit", value: "10") ?? false
+        })
+    }
+
 }
