@@ -11,9 +11,11 @@ extension URLSession: URLSessionProtocol {}
 
 struct FetchCharactersMarvelService {
     private let session: URLSessionProtocol
+    private let authParametersGenerator: () -> String
 
-    init(session: URLSessionProtocol, authParametersGenerator: () -> String) {
+    init(session: URLSessionProtocol, authParametersGenerator: @escaping () -> String) {
         self.session = session
+        self.authParametersGenerator = authParametersGenerator
     }
 
     func fetchCharacters(requestModel: FetchCharactersRequestModel) {
@@ -23,7 +25,8 @@ struct FetchCharactersMarvelService {
         guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters" +
                 "?nameStartsWith=\(namePrefix)" +
                 "&limit=\(requestModel.pageSize)" +
-                "&offset=\(requestModel.offset)") else {
+                "&offset=\(requestModel.offset)" +
+                authParametersGenerator()) else {
             return
         }
         _ = self.session.dataTask(with: url) { data, response, error in  }
