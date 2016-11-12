@@ -52,4 +52,10 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.scheme == "https" })
     }
 
+    func testFetchCharacters_ShouldMakeDataTaskForCharactersAPI() {
+        sut.fetchCharacters(requestModel: dummyRequestModel())
+
+        mockURLSession.verifyDataTask(urlMatcher: { url in url?.path == "/v1/public/characters" })
+    }
+
 }
