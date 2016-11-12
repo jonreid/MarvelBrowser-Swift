@@ -58,4 +58,16 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.path == "/v1/public/characters" })
     }
 
+    func testFetchCharacters_WithNamePrefix_ShouldMakeDataTaskWithQueryForNameStartsWith() {
+        let requestModel = FetchCharactersRequestModel(namePrefix: "NAME", pageSize: 10, offset: 30)
+
+        sut.fetchCharacters(requestModel: requestModel)
+
+        mockURLSession.verifyDataTask(urlMatcher: { maybeURL in
+            guard let url = maybeURL else {
+                return false
+            }
+            return url.hasQuery(name: "nameStartsWith", value: "NAME") })
+    }
+
 }
