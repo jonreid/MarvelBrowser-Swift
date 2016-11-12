@@ -32,4 +32,14 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.host == "gateway.marvel.com" })
     }
 
+    func testFetchCharacters_ShouldMakeDataTaskWithSecureConnection() {
+        let mockURLSession = MockURLSession()
+        let sut = FetchCharactersMarvelService(session: mockURLSession)
+        let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
+
+        sut.fetchCharacters(requestModel: requestModel)
+
+        mockURLSession.verifyDataTask(urlMatcher: { url in url?.scheme == "https" })
+    }
+
 }
