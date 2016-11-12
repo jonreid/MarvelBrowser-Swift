@@ -70,4 +70,16 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
             return url.hasQuery(name: "nameStartsWith", value: "NAME") })
     }
 
+    func testFetchCharacters_WithNamePrefix_ShouldHandleSpacesInNameStartsWith() {
+        let requestModel = FetchCharactersRequestModel(namePrefix: "ab cd", pageSize: 10, offset: 30)
+
+        sut.fetchCharacters(requestModel: requestModel)
+
+        mockURLSession.verifyDataTask(urlMatcher: { maybeURL in
+            guard let url = maybeURL else {
+                return false
+            }
+            return url.hasQuery(name: "nameStartsWith", value: "ab cd") })
+    }
+
 }

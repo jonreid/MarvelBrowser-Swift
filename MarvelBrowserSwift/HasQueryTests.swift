@@ -26,4 +26,10 @@ class HasQueryTests : XCTestCase {
         XCTAssertFalse(url.hasQuery(name: "key1", value: "value1"))
     }
 
+    func testShouldMatchURLContainingMatchingKeyAndValueWithEncodedSpace() {
+        let url = URL(string: "http://dummy.com/dummy?key1=ab%20cd")!
+
+        XCTAssertTrue(url.hasQuery(name: "key1", value: "ab cd"))
+    }
+
 }
