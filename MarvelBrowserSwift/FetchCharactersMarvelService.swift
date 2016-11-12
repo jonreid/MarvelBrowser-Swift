@@ -9,7 +9,7 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {}
 
-class FetchCharactersMarvelService {
+struct FetchCharactersMarvelService {
     private let session: URLSessionProtocol
 
     init(session: URLSessionProtocol) {
