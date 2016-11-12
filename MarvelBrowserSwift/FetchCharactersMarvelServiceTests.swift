@@ -88,4 +88,14 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         })
     }
 
+    func testFetchCharacters_WithOffset_ShouldMakeDataTaskWithQueryForOffset() {
+        let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
+
+        sut.fetchCharacters(requestModel: requestModel)
+
+        mockURLSession.verifyDataTask(urlMatcher: { url in
+            url?.hasQuery(name: "offset", value: "30") ?? false
+        })
+    }
+
 }

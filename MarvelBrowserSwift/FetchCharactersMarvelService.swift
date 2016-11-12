@@ -22,7 +22,8 @@ struct FetchCharactersMarvelService {
         }
         guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters" +
                 "?nameStartsWith=\(namePrefix)" +
-                "&limit=\(requestModel.pageSize)") else {
+                "&limit=\(requestModel.pageSize)" +
+                "&offset=\(requestModel.offset)") else {
             return
         }
         _ = self.session.dataTask(with: url) { data, response, error in  }
