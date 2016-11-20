@@ -4,14 +4,27 @@
 import XCTest
 @testable import MarvelBrowserSwift
 
+class MockURLSessionDataTask: URLSessionDataTask {
+    private var resumeCallCount = 0
+
+    override func resume() {
+        resumeCallCount += 1
+    }
+
+    func verifyResume(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(resumeCallCount, 1, "call count", file: file, line: line)
+    }
+}
+
 class MockURLSession: URLSessionProtocol {
+    var dataTaskReturnValue = URLSessionDataTask()
     private var dataTaskCallCount = 0
     private var dataTaskLastURL: URL?
 
     func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
         dataTaskCallCount += 1
         dataTaskLastURL = url
-        return URLSessionDataTask()
+        return dataTaskReturnValue;
     }
 
     func verifyDataTask(urlMatcher: ((URL?) -> Bool), file: StaticString = #file, line: UInt = #line) {
@@ -107,6 +120,15 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "FOO", value: "BAR") ?? false
         })
+    }
+
+    func testFetchCharacters_ShouldStartDataTask() {
+        let mockDataTask = MockURLSessionDataTask()
+        mockURLSession.dataTaskReturnValue = mockDataTask
+
+        sut.fetchCharacters(requestModel: dummyRequestModel())
+
+        mockDataTask.verifyResume()
     }
 
 }
