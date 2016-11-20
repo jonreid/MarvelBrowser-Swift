@@ -22,7 +22,12 @@ struct FetchCharactersMarvelService {
         guard let url = makeURL(requestModel: requestModel) else {
             return
         }
-        let dataTask = session.dataTask(with: url) { data, response, error in }
+        let dataTask = session.dataTask(with: url) { data, response, error in
+            print("error: \(error)")
+            print("response: \(response)")
+            let str = String(data: data ?? Data(), encoding: .utf8)
+            print("data: \(str)")
+        }
         dataTask.resume()
     }
 
