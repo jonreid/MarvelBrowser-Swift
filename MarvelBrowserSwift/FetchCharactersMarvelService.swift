@@ -22,7 +22,8 @@ struct FetchCharactersMarvelService {
         guard let url = makeURL(requestModel: requestModel) else {
             return
         }
-        _ = session.dataTask(with: url) { data, response, error in  }
+        let dataTask = session.dataTask(with: url) { data, response, error in }
+        dataTask.resume()
     }
 
     private func makeURL(requestModel: FetchCharactersRequestModel) -> URL? {
