@@ -34,16 +34,20 @@ class MockURLSession: URLSessionProtocol {
 }
 
 class FetchCharactersMarvelServiceTests : XCTestCase {
+    var mockDataTask: MockURLSessionDataTask!
     var mockURLSession: MockURLSession!
     var sut: FetchCharactersMarvelService!
 
     override func setUp() {
         super.setUp()
+        mockDataTask = MockURLSessionDataTask()
         mockURLSession = MockURLSession()
+        mockURLSession.dataTaskReturnValue = mockDataTask
         sut = FetchCharactersMarvelService(session: mockURLSession, authParametersGenerator: { return "" })
     }
 
     override func tearDown() {
+        mockDataTask = nil
         mockURLSession = nil
         sut = nil
         super.tearDown()
@@ -123,9 +127,6 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
     }
 
     func testFetchCharacters_ShouldStartDataTask() {
-        let mockDataTask = MockURLSessionDataTask()
-        mockURLSession.dataTaskReturnValue = mockDataTask
-
         sut.fetchCharacters(requestModel: dummyRequestModel())
 
         mockDataTask.verifyResume()
