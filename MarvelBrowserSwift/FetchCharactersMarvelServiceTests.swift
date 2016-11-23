@@ -4,7 +4,7 @@
 import XCTest
 @testable import MarvelBrowserSwift
 
-class MockURLSessionDataTask: URLSessionDataTask {
+class PartialMockURLSessionDataTask: URLSessionDataTask {
     private var resumeCallCount = 0
 
     override func resume() {
@@ -34,13 +34,13 @@ class MockURLSession: URLSessionProtocol {
 }
 
 class FetchCharactersMarvelServiceTests : XCTestCase {
-    var mockDataTask: MockURLSessionDataTask!
+    var mockDataTask: PartialMockURLSessionDataTask!
     var mockURLSession: MockURLSession!
     var sut: FetchCharactersMarvelService!
 
     override func setUp() {
         super.setUp()
-        mockDataTask = MockURLSessionDataTask()
+        mockDataTask = PartialMockURLSessionDataTask()
         mockURLSession = MockURLSession()
         mockURLSession.dataTaskReturnValue = mockDataTask
         sut = FetchCharactersMarvelService(session: mockURLSession, authParametersGenerator: { return "" })
