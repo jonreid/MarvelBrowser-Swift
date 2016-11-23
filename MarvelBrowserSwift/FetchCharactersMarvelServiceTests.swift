@@ -17,7 +17,7 @@ class MockURLSessionDataTask: URLSessionDataTask {
 }
 
 class MockURLSession: URLSessionProtocol {
-    var dataTaskReturnValue = URLSessionDataTask()
+    var dataTaskReturnValue: URLSessionDataTask!
     private var dataTaskCallCount = 0
     private var dataTaskLastURL: URL?
 
