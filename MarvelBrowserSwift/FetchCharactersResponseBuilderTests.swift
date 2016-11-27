@@ -18,20 +18,38 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         super.tearDown()
     }
 
-    func testParse_WithCode200() {
-        let jsonData = "{\"code\":200}".data(using: .utf8)!
-
-        let response = sut.parse(jsonData: jsonData)
-
-        XCTAssertEqual(response.code, 200)
+    private func jsonData(_ json: String) -> Data {
+        return json.data(using: .utf8)!
     }
 
-    func testParse_WithCode409() {
-        let jsonData = "{\"code\":409}".data(using: .utf8)!
+    func testParse_WithCode200_ShouldReturnSuccess() {
+        let json = "{\"code\":200}"
 
-        let response = sut.parse(jsonData: jsonData)
+        let response = sut.parse(jsonData(json))
 
-        XCTAssertEqual(response.code, 409)
+        switch response {
+        case .success(_):
+            break
+        default:
+            XCTFail("Expected success, got \(response)")
+        }
+    }
+
+    func testParse_WithCode409AndStatus_ShouldReturnFailureWithStatus() {
+        let json =
+                "{" +
+                    "\"code\":409," +
+                    "\"status\":\"STATUS\"" +
+                "}"
+
+        let response = sut.parse(jsonData(json))
+
+        switch response {
+        case .failure(let status):
+            XCTAssertEqual(status, "STATUS")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
     }
 
 }

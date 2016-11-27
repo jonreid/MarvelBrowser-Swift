@@ -4,10 +4,15 @@
 import Foundation
 
 class FetchCharactersResponseBuilder {
-    func parse(jsonData: Data) -> FetchCharactersResponseModel {
+    func parse(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
         let jsonObject = try? JSONSerialization.jsonObject(with: jsonData)
         let dict = jsonObject as? [String: Any]
         let code = dict?["code"] as? Int
-        return FetchCharactersResponseModel(code: code)
+        if code == 200 {
+            return .success(FetchCharactersResponseModel())
+        } else {
+            let status = dict?["status"] as? String
+            return .failure(status ?? "")
+        }
     }
 }
