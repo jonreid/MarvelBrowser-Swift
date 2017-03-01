@@ -8,10 +8,8 @@ private let badJSON = "Bad JSON"
 class FetchCharactersResponseBuilder {
     func parse(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
         let object = try? JSONSerialization.jsonObject(with: jsonData)
-        guard let dict = object as? [String: Any] else {
-            return .failure(badJSON)
-        }
-        guard let code = dict["code"] as? Int else {
+        guard let dict = object as? [String: Any],
+              let code = dict["code"] as? Int else {
             return .failure(badJSON)
         }
         if code == 200 {
