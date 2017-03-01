@@ -13,10 +13,8 @@ class FetchCharactersResponseBuilder {
             return .failure(badJSON)
         }
         if code != 200 {
-            let status = dict["status"] as? String
-            return .failure(status ?? badJSON)
-        } else {
-            return .success(FetchCharactersResponseModel())
+            return .failure(dict["status"] as? String ?? badJSON)
         }
+        return .success(FetchCharactersResponseModel())
     }
 }
