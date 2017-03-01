@@ -3,22 +3,24 @@
 
 import Foundation
 
+private let badJSON = "Bad JSON"
+
 class FetchCharactersResponseBuilder {
     func parse(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
         let object = try? JSONSerialization.jsonObject(with: jsonData)
         let dict = object as? [String: Any]
         if dict == nil {
-            return .failure("Bad JSON")
+            return .failure(badJSON)
         }
         let code = dict?["code"] as? Int
         if code == nil {
-            return .failure("Bad JSON")
+            return .failure(badJSON)
         }
         if code == 200 {
             return .success(FetchCharactersResponseModel())
         } else {
             let status = dict?["status"] as? String
-            return .failure(status ?? "Bad JSON")
+            return .failure(status ?? badJSON)
         }
     }
 }
