@@ -52,7 +52,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         }
     }
 
-    func testParse_WithMalformedJSON_ShouldReturnFailure() {
+    func testParse_WithMalformedJSON_ShouldReturnBadJSONFailure() {
         let json =
                 "{" +
                     "\"cod"
@@ -67,7 +67,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         }
     }
 
-    func testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldReturnFailure() {
+    func testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldReturnBadJSONFailure() {
         let json = "[]"
 
         let response = sut.parse(jsonData(json))
@@ -80,12 +80,28 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         }
     }
 
-    func testParseJSONData_WithNonIntegerCode_ShouldReturnFailure() {
+    func testParseJSONData_WithNonIntegerCode_ShouldReturnBadJSONFailure() {
         let json =
                 "{" +
-                        "\"code\":\"409\"," +
-                        "\"status\":\"STATUS\"" +
-                        "}"
+                    "\"code\":\"409\"," +
+                    "\"status\":\"STATUS\"" +
+                "}"
+
+        let response = sut.parse(jsonData(json))
+
+        switch response {
+        case .failure(let status):
+            XCTAssertEqual(status, "Bad JSON")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
+    }
+
+func testParseJSONData_WithValidFailureCodeButNoStatus_ShouldReturnBadJSONFailure() {
+        let json =
+                "{" +
+                    "\"code\":409" +
+                "}"
 
         let response = sut.parse(jsonData(json))
 

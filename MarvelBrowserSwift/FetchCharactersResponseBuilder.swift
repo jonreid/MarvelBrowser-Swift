@@ -18,7 +18,7 @@ class FetchCharactersResponseBuilder {
             return .success(FetchCharactersResponseModel())
         } else {
             let status = dict?["status"] as? String
-            return .failure(status ?? "")
+            return .failure(status ?? "Bad JSON")
         }
     }
 }
