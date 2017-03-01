@@ -80,4 +80,21 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         }
     }
 
+    func testParseJSONData_WithNonIntegerCode_ShouldReturnFailure() {
+        let json =
+                "{" +
+                        "\"code\":\"409\"," +
+                        "\"status\":\"STATUS\"" +
+                        "}"
+
+        let response = sut.parse(jsonData(json))
+
+        switch response {
+        case .failure(let status):
+            XCTAssertEqual(status, "Bad JSON")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
+    }
+
 }
