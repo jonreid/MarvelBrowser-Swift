@@ -10,6 +10,9 @@ class FetchCharactersResponseBuilder {
             return .failure("Bad JSON")
         }
         let dict = jsonObject as? [String: Any]
+        if dict == nil {
+            return .failure("Bad JSON")
+        }
         let code = dict?["code"] as? Int
         if code == 200 {
             return .success(FetchCharactersResponseModel())
