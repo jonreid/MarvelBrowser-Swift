@@ -67,4 +67,17 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         }
     }
 
+    func testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldReturnFailure() {
+        let json = "[]"
+
+        let response = sut.parse(jsonData(json))
+
+        switch response {
+        case .failure(let status):
+            XCTAssertEqual(status, "Bad JSON")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
+    }
+
 }
