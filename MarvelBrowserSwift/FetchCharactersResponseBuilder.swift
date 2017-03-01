@@ -5,12 +5,15 @@ import Foundation
 
 class FetchCharactersResponseBuilder {
     func parse(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
-        let jsonObject = try? JSONSerialization.jsonObject(with: jsonData)
-        let dict = jsonObject as? [String: Any]
+        let object = try? JSONSerialization.jsonObject(with: jsonData)
+        let dict = object as? [String: Any]
         if dict == nil {
             return .failure("Bad JSON")
         }
         let code = dict?["code"] as? Int
+        if code == nil {
+            return .failure("Bad JSON")
+        }
         if code == 200 {
             return .success(FetchCharactersResponseModel())
         } else {
