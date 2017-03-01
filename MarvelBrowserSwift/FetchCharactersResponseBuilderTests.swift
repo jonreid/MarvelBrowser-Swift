@@ -52,4 +52,19 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         }
     }
 
+    func testParse_WithMalformedJSON_ShouldReturnFailure() {
+        let json =
+                "{" +
+                    "\"cod"
+
+        let response = sut.parse(jsonData(json))
+
+        switch response {
+        case .failure(let status):
+            XCTAssertEqual(status, "Bad JSON")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
+    }
+
 }
