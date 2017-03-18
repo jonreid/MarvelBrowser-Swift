@@ -7,5 +7,6 @@ class FetchCharactersResponseDataBuilder {
 
     func parse(dictionary dict: [String: Any]) {
         offset = dict["offset"] as? Int
+        total = dict["total"] as? Int
     }
 }
