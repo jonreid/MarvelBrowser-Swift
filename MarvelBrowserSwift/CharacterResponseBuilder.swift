@@ -7,4 +7,8 @@ class CharacterResponseBuilder {
     func parse(dictionary dict: [String: Any]) {
         name = dict["name"] as? String
     }
+
+    func build() -> CharacterResponse {
+        return CharacterResponse()
+    }
 }
