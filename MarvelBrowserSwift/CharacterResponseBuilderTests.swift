@@ -38,8 +38,17 @@ class CharacterResponseBuilderTests : XCTestCase {
         let dict: [String: Any] = ["name": "NAME"]
         sut.parse(dictionary: dict)
 
-        let response: CharacterResponse = sut.build()
+        let response = sut.build()
 
         XCTAssertEqual(response.name, "NAME")
+    }
+
+    func testBuild_RequiresName() {
+        let dict: [String: Any] = [:]
+        sut.parse(dictionary: dict)
+
+        let response = sut.build()
+
+        XCTAssertNil(response)
     }
 }
