@@ -11,6 +11,8 @@ class CharacterResponseBuilderTests : XCTestCase {
         let dict: [String: Any] = ["name": 123]
 
         sut.parse(dictionary: dict)
+
+        sut.name = "foo"
     }
 }
 
