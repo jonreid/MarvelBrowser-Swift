@@ -6,8 +6,19 @@ import XCTest
 @testable import MarvelBrowserSwift
 
 class CharacterResponseBuilderTests : XCTestCase {
+    var sut: CharacterResponseBuilder!
+
+    override func setUp() {
+        super.setUp()
+        sut = CharacterResponseBuilder()
+    }
+
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
+    }
+
     func testParseDictionary_WithNonStringName_ShouldCaptureNilInBuilder() {
-        let sut = CharacterResponseBuilder()
         let dict: [String: Any] = ["name": 123]
 
         sut.parse(dictionary: dict)
@@ -16,7 +27,6 @@ class CharacterResponseBuilderTests : XCTestCase {
     }
 
     func testParseDictionary_WithName_ShouldCaptureValueInBuilder() {
-        let sut = CharacterResponseBuilder()
         let dict: [String: Any] = ["name": "NAME"]
 
         sut.parse(dictionary: dict)
