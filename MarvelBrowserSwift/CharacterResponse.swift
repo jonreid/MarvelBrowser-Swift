@@ -2,4 +2,5 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 struct CharacterResponse {
+    let name: String
 }

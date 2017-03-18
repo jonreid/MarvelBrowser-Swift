@@ -9,6 +9,6 @@ class CharacterResponseBuilder {
     }
 
     func build() -> CharacterResponse {
-        return CharacterResponse()
+        return CharacterResponse(name: "")
     }
 }
