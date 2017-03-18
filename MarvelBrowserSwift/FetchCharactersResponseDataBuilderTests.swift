@@ -12,6 +12,6 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
         sut.parse(dictionary: dict)
 
-        sut.offset = NSNumber(integerLiteral: 123)
+        XCTAssertNil(sut.offset)
     }
 }
