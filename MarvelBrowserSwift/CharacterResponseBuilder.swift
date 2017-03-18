@@ -9,6 +9,9 @@ class CharacterResponseBuilder {
     }
 
     func build() -> CharacterResponse? {
-        return nil
+        guard let name = name else {
+            return nil
+        }
+        return CharacterResponse(name: name)
     }
 }
