@@ -2,4 +2,7 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 class CharacterResponseBuilder {
+    func parse(dictionary: [String: Any]) {
+
+    }
 }
