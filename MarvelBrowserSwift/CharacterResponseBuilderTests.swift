@@ -14,4 +14,13 @@ class CharacterResponseBuilderTests : XCTestCase {
 
         XCTAssertNil(sut.name)
     }
+
+    func testParseDictionary_WithName_ShouldCaptureValueInBuilder() {
+        let sut = CharacterResponseBuilder()
+        let dict: [String: Any] = ["name": "NAME"]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertEqual(sut.name, "NAME")
+    }
 }
