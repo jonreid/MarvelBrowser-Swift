@@ -5,9 +5,19 @@ import XCTest
 @testable import MarvelBrowserSwift
 
 class FetchCharactersResponseDataBuilderTests : XCTestCase {
+    var sut: FetchCharactersResponseDataBuilder!
+
+    override func setUp() {
+        super.setUp()
+        sut = FetchCharactersResponseDataBuilder()
+    }
+
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
+    }
 
     func testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder() {
-        let sut = FetchCharactersResponseDataBuilder()
         let dict: [String: Any] = ["offset": "123"]
 
         sut.parse(dictionary: dict)
@@ -16,7 +26,6 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     }
 
     func testParseDictionary_WithIntegerOffset_ShouldCaptureValueInBuilder() {
-        let sut = FetchCharactersResponseDataBuilder()
         let dict: [String: Any] = ["offset": 123]
 
         sut.parse(dictionary: dict)
