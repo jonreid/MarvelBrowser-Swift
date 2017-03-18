@@ -11,5 +11,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         let dict: [String: Any] = ["offset": "123"]
 
         sut.parse(dictionary: dict)
+
+        sut.offset = NSNumber(integerLiteral: 123)
     }
 }
