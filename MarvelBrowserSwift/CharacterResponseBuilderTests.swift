@@ -39,5 +39,7 @@ class CharacterResponseBuilderTests : XCTestCase {
         sut.parse(dictionary: dict)
 
         let response: CharacterResponse = sut.build()
+
+        XCTAssertEqual(response.name, "NAME")
     }
 }
