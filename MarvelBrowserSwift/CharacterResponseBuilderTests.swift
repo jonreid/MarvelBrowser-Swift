@@ -12,7 +12,6 @@ class CharacterResponseBuilderTests : XCTestCase {
 
         sut.parse(dictionary: dict)
 
-        sut.name = "foo"
+        XCTAssertNil(sut.name)
     }
 }
-
