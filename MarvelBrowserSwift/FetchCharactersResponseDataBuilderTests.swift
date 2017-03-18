@@ -14,4 +14,13 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
         XCTAssertNil(sut.offset)
     }
+
+    func testParseDictionary_WithIntegerOffset_ShouldCaptureValueInBuilder() {
+        let sut = FetchCharactersResponseDataBuilder()
+        let dict: [String: Any] = ["offset": 123]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertEqual(sut.offset, NSNumber(integerLiteral: 123))
+    }
 }
