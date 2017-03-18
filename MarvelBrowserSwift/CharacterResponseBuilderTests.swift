@@ -8,6 +8,9 @@ import XCTest
 class CharacterResponseBuilderTests : XCTestCase {
     func testParseDictionary_WithNonStringName_ShouldCaptureNilInBuilder() {
         let sut = CharacterResponseBuilder()
+        let dict: [String: Any] = ["name": 123]
+
+        sut.parse(dictionary: dict)
     }
 }
 
