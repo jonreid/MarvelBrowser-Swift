@@ -8,5 +8,8 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
     func testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder() {
         let sut = FetchCharactersResponseDataBuilder()
+        let dict: [String: Any] = ["offset": "123"]
+
+        sut.parse(dictionary: dict)
     }
 }
