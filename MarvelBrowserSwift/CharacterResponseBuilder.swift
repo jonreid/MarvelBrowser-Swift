@@ -8,7 +8,7 @@ class CharacterResponseBuilder {
         name = dict["name"] as? String
     }
 
-    func build() -> CharacterResponse {
-        return CharacterResponse(name: "")
+    func build() -> CharacterResponse? {
+        return nil
     }
 }

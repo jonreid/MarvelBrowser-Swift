@@ -40,7 +40,7 @@ class CharacterResponseBuilderTests : XCTestCase {
 
         let response = sut.build()
 
-        XCTAssertEqual(response.name, "NAME")
+        XCTAssertEqual(response?.name, "NAME")
     }
 
     func testBuild_RequiresName() {
