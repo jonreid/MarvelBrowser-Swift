@@ -32,4 +32,13 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
         XCTAssertEqual(sut.offset, 123)
     }
+
+    func testParseDictionary_WithNonIntegerTotal_ShouldCaptureNilInBuilder() {
+        let dict: [String: Any] = ["total": "123"]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertNil(sut.total)
+    }
+
 }
