@@ -2,4 +2,6 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 class FetchCharactersResponseDataBuilder {
+    func parse(dictionary dict: [String: Any]) {
+    }
 }
