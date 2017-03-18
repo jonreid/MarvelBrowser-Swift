@@ -4,7 +4,7 @@
 class CharacterResponseBuilder {
     var name: String?
 
-    func parse(dictionary: [String: Any]) {
-
+    func parse(dictionary dict: [String: Any]) {
+        name = dict["name"] as? String
     }
 }
