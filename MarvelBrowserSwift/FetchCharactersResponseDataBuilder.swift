@@ -7,5 +7,6 @@ class FetchCharactersResponseDataBuilder {
     var offset: NSNumber?
 
     func parse(dictionary dict: [String: Any]) {
+        offset = dict["offset"] as? NSNumber
     }
 }
