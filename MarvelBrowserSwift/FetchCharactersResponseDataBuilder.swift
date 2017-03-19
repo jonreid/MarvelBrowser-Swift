@@ -25,9 +25,6 @@ class FetchCharactersResponseDataBuilder {
     }
 
     func buildCharacters() -> [CharacterResponse] {
-        guard let results = results else {
-            return []
-        }
-        return results.flatMap() { $0.build() }
+        return results?.flatMap() { $0.build() } ?? []
     }
 }
