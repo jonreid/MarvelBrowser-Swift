@@ -25,6 +25,14 @@ class FetchCharactersResponseDataBuilder {
     }
 
     func buildCharacters() -> [CharacterResponse] {
-        return []
+        var characters: [CharacterResponse] = []
+        if let results = results {
+            for builder in results {
+                if let character = builder.build() {
+                    characters.append(character)
+                }
+            }
+        }
+        return characters
     }
 }
