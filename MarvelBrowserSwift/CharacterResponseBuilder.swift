@@ -2,9 +2,9 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 class CharacterResponseBuilder {
-    var name: String?
+    let name: String?
 
-    func parse(dictionary dict: [String: Any]) {
+    init(dictionary dict: [String: Any]) {
         name = dict["name"] as? String
     }
 
