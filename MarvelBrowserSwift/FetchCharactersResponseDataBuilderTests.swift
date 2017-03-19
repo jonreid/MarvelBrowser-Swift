@@ -96,7 +96,10 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         ]]
         sut.parse(dictionary: dict)
 
-        let characters: [CharacterResponse] = sut.buildCharacters()
+        let characters = sut.buildCharacters()
+
+        XCTAssertEqual(characters.count, 2)
+        XCTAssertEqual(characters[0].name, "ONE")
+        XCTAssertEqual(characters[1].name, "TWO")
     }
-    
 }
