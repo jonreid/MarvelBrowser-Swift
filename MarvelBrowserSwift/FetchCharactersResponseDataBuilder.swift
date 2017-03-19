@@ -11,9 +11,11 @@ class FetchCharactersResponseDataBuilder {
         total = dict["total"] as? Int
         if let r = dict["results"] as? Array<[String: Any]> {
             var accumulator: [CharacterResponseBuilder] = []
-            let builder = CharacterResponseBuilder()
-            builder.parse(dictionary: r[0])
-            accumulator.append(builder)
+            for resultsDict in r {
+                let builder = CharacterResponseBuilder()
+                builder.parse(dictionary: resultsDict)
+                accumulator.append(builder)
+            }
             results = accumulator
         }
     }
