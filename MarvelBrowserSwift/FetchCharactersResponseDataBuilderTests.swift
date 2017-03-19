@@ -17,7 +17,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         super.tearDown()
     }
 
-    func testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder() {
+    func testParse_WithNonIntegerOffset_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["offset": "123"]
 
         sut.parse(dictionary: dict)
@@ -25,7 +25,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertNil(sut.offset)
     }
 
-    func testParseDictionary_WithIntegerOffset_ShouldCaptureValueInBuilder() {
+    func testParse_WithIntegerOffset_ShouldCaptureValueInBuilder() {
         let dict: [String: Any] = ["offset": 123]
 
         sut.parse(dictionary: dict)
@@ -33,7 +33,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertEqual(sut.offset, 123)
     }
 
-    func testParseDictionary_WithNonIntegerTotal_ShouldCaptureNilInBuilder() {
+    func testParse_WithNonIntegerTotal_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["total": "123"]
 
         sut.parse(dictionary: dict)
@@ -41,7 +41,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertNil(sut.total)
     }
 
-    func testParseDictionary_WithIntegerTotal_ShouldCaptureValueInBuilder() {
+    func testParse_WithIntegerTotal_ShouldCaptureValueInBuilder() {
         let dict: [String: Any] = ["total": 123]
 
         sut.parse(dictionary: dict)
@@ -49,7 +49,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertEqual(sut.total, 123)
     }
 
-    func testParseDictionary_WithNonArrayResult_ShouldCaptureNilInBuilder() {
+    func testParse_WithNonArrayResult_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["results": ["name": "DUMMY"]]
 
         sut.parse(dictionary: dict)
@@ -57,7 +57,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertNil(sut.results)
     }
     
-    func testParseDictionary_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder() {
+    func testParse_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder() {
         let dict: [String: Any] = ["results": ["DUMMY"]]
 
         sut.parse(dictionary: dict)
@@ -65,7 +65,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertEqual(sut.results?.count ?? 0, 0)
     }
 
-    func testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder() {
+    func testParse_WithOneResult_ShouldCaptureOneCharacterInBuilder() {
         let dict: [String: Any] = ["results": [
                 ["name": "ONE"],
         ]]
@@ -76,7 +76,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertEqual(sut.results?[0].name, "ONE")
     }
 
-    func testParseDictionary_WithTwoResult_ShouldCaptureTwoCharactersInBuilder() {
+    func testParse_WithTwoResults_ShouldCaptureTwoCharactersInBuilder() {
         let dict: [String: Any] = ["results": [
                 ["name": "ONE"],
                 ["name": "TWO"],
