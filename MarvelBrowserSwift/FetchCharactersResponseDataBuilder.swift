@@ -6,7 +6,7 @@ class FetchCharactersResponseDataBuilder {
     var total: Int?
     var results: [CharacterResponseBuilder]?
 
-    func parse(dictionary dict: [String: Any]) {
+    init(dictionary dict: [String: Any]) {
         offset = dict["offset"] as? Int
         total = dict["total"] as? Int
         results = parseResults(from: dict["results"] as? Array<[String: Any]>)
