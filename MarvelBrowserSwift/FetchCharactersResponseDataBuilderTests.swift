@@ -64,4 +64,13 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
         XCTAssertEqual(sut.results?.count ?? 0, 0)
     }
+
+    func testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder() {
+        let dict: [String: Any] = ["results": ["name": "ONE"]]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertEqual(sut.results?.count, 1)
+        XCTAssertEqual(sut.results?[0].name, "ONE")
+    }
 }
