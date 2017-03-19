@@ -49,4 +49,11 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertEqual(sut.total, 123)
     }
 
+    func testParseDictionary_WithNonArrayResult_ShouldCaptureNilInBuilder() {
+        let dict: [String: Any] = ["results": ["name": "DUMMY"]]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertNil(sut.results)
+    }
 }
