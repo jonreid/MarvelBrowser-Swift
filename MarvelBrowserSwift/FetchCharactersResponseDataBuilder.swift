@@ -15,13 +15,11 @@ class FetchCharactersResponseDataBuilder {
     }
 
     private func parseResults(from array: Array<[String: Any]>) -> [CharacterResponseBuilder] {
-        var accumulator: [CharacterResponseBuilder] = []
-        for dict in array {
+        return array.map() {
             let builder = CharacterResponseBuilder()
-            builder.parse(dictionary: dict)
-            accumulator.append(builder)
+            builder.parse(dictionary: $0)
+            return builder
         }
-        return accumulator
     }
 
     func buildCharacters() -> [CharacterResponse] {
