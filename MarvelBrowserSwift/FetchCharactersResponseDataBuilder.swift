@@ -9,13 +9,11 @@ class FetchCharactersResponseDataBuilder {
     func parse(dictionary dict: [String: Any]) {
         offset = dict["offset"] as? Int
         total = dict["total"] as? Int
-        if let resultsArray = dict["results"] as? Array<[String: Any]> {
-            results = parseResults(from: resultsArray)
-        }
+        results = parseResults(from: dict["results"] as? Array<[String: Any]>)
     }
 
-    private func parseResults(from array: Array<[String: Any]>) -> [CharacterResponseBuilder] {
-        return array.map() {
+    private func parseResults(from array: Array<[String: Any]>?) -> [CharacterResponseBuilder]? {
+        return array?.map() {
             let builder = CharacterResponseBuilder()
             builder.parse(dictionary: $0)
             return builder
