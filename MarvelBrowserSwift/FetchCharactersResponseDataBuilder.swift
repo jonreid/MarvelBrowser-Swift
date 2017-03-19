@@ -23,4 +23,8 @@ class FetchCharactersResponseDataBuilder {
         }
         return accumulator
     }
+
+    func buildCharacters() -> [CharacterResponse] {
+        return []
+    }
 }
