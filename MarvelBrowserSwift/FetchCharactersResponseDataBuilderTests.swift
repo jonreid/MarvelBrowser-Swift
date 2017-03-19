@@ -66,7 +66,9 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     }
 
     func testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder() {
-        let dict: [String: Any] = ["results": ["name": "ONE"]]
+        let dict: [String: Any] = ["results": [
+                ["name": "ONE"]
+        ]]
 
         sut.parse(dictionary: dict)
 
