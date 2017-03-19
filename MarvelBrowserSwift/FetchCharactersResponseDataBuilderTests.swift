@@ -67,12 +67,25 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
     func testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder() {
         let dict: [String: Any] = ["results": [
-                ["name": "ONE"]
+                ["name": "ONE"],
         ]]
 
         sut.parse(dictionary: dict)
 
         XCTAssertEqual(sut.results?.count, 1)
         XCTAssertEqual(sut.results?[0].name, "ONE")
+    }
+
+    func testParseDictionary_WithTwoResult_ShouldCaptureTwoCharactersInBuilder() {
+        let dict: [String: Any] = ["results": [
+                ["name": "ONE"],
+                ["name": "TWO"],
+        ]]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertEqual(sut.results?.count, 2)
+        XCTAssertEqual(sut.results?[0].name, "ONE")
+        XCTAssertEqual(sut.results?[1].name, "TWO")
     }
 }
