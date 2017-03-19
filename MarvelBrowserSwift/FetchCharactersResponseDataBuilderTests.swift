@@ -56,4 +56,12 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
 
         XCTAssertNil(sut.results)
     }
+    
+    func testParseDictionary_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder() {
+        let dict: [String: Any] = ["results": ["DUMMY"]]
+
+        sut.parse(dictionary: dict)
+
+        XCTAssertEqual(sut.results?.count ?? 0, 0)
+    }
 }
