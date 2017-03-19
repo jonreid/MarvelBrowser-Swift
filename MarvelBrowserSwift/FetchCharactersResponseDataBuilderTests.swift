@@ -88,4 +88,15 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
         XCTAssertEqual(sut.results?[0].name, "ONE")
         XCTAssertEqual(sut.results?[1].name, "TWO")
     }
+
+    func testBuildCharacters_WithTwoResults_ShouldGenerateBuildTwoCharacters() {
+        let dict: [String: Any] = ["results": [
+                ["name": "ONE"],
+                ["name": "TWO"],
+        ]]
+        sut.parse(dictionary: dict)
+
+        let characters: [CharacterResponse] = sut.buildCharacters()
+    }
+    
 }
