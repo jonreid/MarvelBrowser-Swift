@@ -36,4 +36,18 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
 
         XCTAssertEqual(response?.total, 123)
     }
+
+    func testBuild_WithResults_ShouldHaveGivenCharacters() {
+        let dict: [String: Any] = ["data": ["results": [
+            ["name": "NAME1"],
+            ["name": "NAME2"],
+        ]]]
+        let sut = FetchCharactersResponseBuilder(dictionary: dict)
+
+        let response = sut.build()
+
+        XCTAssertEqual(response?.characters.count, 2)
+        XCTAssertEqual(response?.characters[0].name, "NAME1")
+        XCTAssertEqual(response?.characters[1].name, "NAME2")
+    }
 }
