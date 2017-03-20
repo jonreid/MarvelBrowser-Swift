@@ -2,5 +2,9 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 struct FetchCharactersResponseBuilder {
-    init(dictionary: [String: Any]) {}
+    let data: CharactersSliceResponseBuilder?
+
+    init(dictionary: [String: Any]) {
+        data = nil
+    }
 }
