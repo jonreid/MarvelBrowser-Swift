@@ -24,5 +24,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         let sut = FetchCharactersResponseBuilder(dictionary: dict)
 
         let response = sut.build()
+
+        XCTAssertEqual(response.offset, 123)
     }
 }
