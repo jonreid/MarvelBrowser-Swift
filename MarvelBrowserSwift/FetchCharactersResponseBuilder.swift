@@ -9,7 +9,10 @@ struct FetchCharactersResponseBuilder {
         data = dataDict.map() { CharactersSliceResponseBuilder(dictionary: $0) }
     }
 
-    func build() -> FetchCharactersResponseModel {
-        return FetchCharactersResponseModel(offset: 0)
+    func build() -> FetchCharactersResponseModel? {
+        guard let data = data else {
+            return nil
+        }
+        return FetchCharactersResponseModel(offset: data.offset ?? 0)
     }
 }
