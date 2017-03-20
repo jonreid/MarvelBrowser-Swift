@@ -23,7 +23,7 @@ class CharacterResponseBuilderTests : XCTestCase {
         XCTAssertEqual(sut.name, "NAME")
     }
 
-    func testBuild_ShouldHaveGivenName() {
+    func testBuild_WithName_ShouldHaveGivenName() {
         let dict: [String: Any] = ["name": "NAME"]
         let sut = CharacterResponseBuilder(dictionary: dict)
 
@@ -32,7 +32,7 @@ class CharacterResponseBuilderTests : XCTestCase {
         XCTAssertEqual(response?.name, "NAME")
     }
 
-    func testBuild_RequiresName() {
+    func testBuild_WithoutName_ShouldReturnNil() {
         let dict: [String: Any] = [:]
         let sut = CharacterResponseBuilder(dictionary: dict)
 
