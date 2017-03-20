@@ -16,7 +16,7 @@ struct FetchCharactersResponseBuilder {
         return FetchCharactersResponseModel(
                 offset: data.offset ?? 0,
                 total: data.total ?? 0,
-                characters: []
+                characters: data.buildCharacters()
         )
     }
 }
