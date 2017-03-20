@@ -6,7 +6,7 @@ import Foundation
 private let badJSON = "Bad JSON"
 
 struct FetchCharactersResponseBuilder {
-    func parse(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
+    func parseFetchCharacters(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
         let object = try? JSONSerialization.jsonObject(with: jsonData)
         guard let dict = object as? [String: Any],
               let code = dict["code"] as? Int else {
