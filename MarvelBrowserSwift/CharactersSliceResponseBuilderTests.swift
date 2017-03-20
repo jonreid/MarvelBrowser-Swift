@@ -4,12 +4,12 @@
 import XCTest
 @testable import MarvelBrowserSwift
 
-class FetchCharactersResponseDataBuilderTests : XCTestCase {
+class CharactersSliceResponseBuilderTests: XCTestCase {
 
     func testInit_WithNonIntegerOffset_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["offset": "123"]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertNil(sut.offset)
     }
@@ -17,7 +17,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     func testInit_WithIntegerOffset_ShouldCaptureValueInBuilder() {
         let dict: [String: Any] = ["offset": 123]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertEqual(sut.offset, 123)
     }
@@ -25,7 +25,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     func testInit_WithNonIntegerTotal_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["total": "123"]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertNil(sut.total)
     }
@@ -33,7 +33,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     func testInit_WithIntegerTotal_ShouldCaptureValueInBuilder() {
         let dict: [String: Any] = ["total": 123]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertEqual(sut.total, 123)
     }
@@ -41,7 +41,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     func testInit_WithNonArrayResult_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["results": ["name": "DUMMY"]]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertNil(sut.results)
     }
@@ -49,7 +49,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
     func testInit_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder() {
         let dict: [String: Any] = ["results": ["DUMMY"]]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertEqual(sut.results?.count ?? 0, 0)
     }
@@ -59,7 +59,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
                 ["name": "ONE"],
         ]]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertEqual(sut.results?.count, 1)
         XCTAssertEqual(sut.results?[0].name, "ONE")
@@ -71,7 +71,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
                 ["name": "TWO"],
         ]]
 
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         XCTAssertEqual(sut.results?.count, 2)
         XCTAssertEqual(sut.results?[0].name, "ONE")
@@ -83,7 +83,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
                 ["name": "ONE"],
                 ["name": "TWO"],
         ]]
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         let characters = sut.buildCharacters()
 
@@ -97,7 +97,7 @@ class FetchCharactersResponseDataBuilderTests : XCTestCase {
                 [:],
                 ["name": "TWO"],
         ]]
-        let sut = FetchCharactersResponseDataBuilder(dictionary: dict)
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         let characters = sut.buildCharacters()
 
