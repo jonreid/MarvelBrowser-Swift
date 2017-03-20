@@ -10,4 +10,12 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
 
         XCTAssertNil(sut.data)
     }
+
+    func testInit_WithData_ShouldCaptureValueInBuilder() {
+        let dict: [String: Any] = ["data": ["offset": 123]]
+
+        let sut = FetchCharactersResponseBuilder(dictionary: dict)
+
+        XCTAssertEqual(sut.data?.offset, 123)
+    }
 }
