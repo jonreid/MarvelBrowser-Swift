@@ -14,5 +14,5 @@ func parseFetchCharacters(jsonData: Data) -> Result<FetchCharactersResponseModel
     if code != 200 {
         return .failure(dict["status"] as? String ?? badJSON)
     }
-    return .success(FetchCharactersResponseModel(offset: 0))
+    return .success(FetchCharactersResponseModel(offset: 0, total: 0))
 }

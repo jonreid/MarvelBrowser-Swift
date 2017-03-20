@@ -13,6 +13,8 @@ struct FetchCharactersResponseBuilder {
         guard let data = data else {
             return nil
         }
-        return FetchCharactersResponseModel(offset: data.offset ?? 0)
+        return FetchCharactersResponseModel(
+                offset: data.offset ?? 0,
+                total: 0)
     }
 }
