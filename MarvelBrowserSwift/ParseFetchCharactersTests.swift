@@ -13,7 +13,7 @@ class ParseFetchCharactersTests: XCTestCase {
     func testParse_WithCode200_ShouldReturnSuccess() {
         let json = "{\"code\":200}"
 
-        let response = parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
         case .success(_):
@@ -30,7 +30,7 @@ class ParseFetchCharactersTests: XCTestCase {
                     "\"status\":\"STATUS\"" +
                 "}"
 
-        let response = parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -45,7 +45,7 @@ class ParseFetchCharactersTests: XCTestCase {
                 "{" +
                     "\"cod"
 
-        let response = parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -58,7 +58,7 @@ class ParseFetchCharactersTests: XCTestCase {
     func testParse_WithJSONArrayInsteadOfDictionary_ShouldReturnBadJSONFailure() {
         let json = "[]"
 
-        let response = parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -75,7 +75,7 @@ class ParseFetchCharactersTests: XCTestCase {
                     "\"status\":\"STATUS\"" +
                 "}"
 
-        let response = parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -91,7 +91,7 @@ func testParse_WithValidFailureCodeButNoStatus_ShouldReturnBadJSONFailure() {
                     "\"code\":409" +
                 "}"
 
-        let response = parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
         case .failure(let status):
