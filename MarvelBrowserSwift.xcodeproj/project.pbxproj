@@ -133,11 +133,13 @@
 		0EBB3C891CCC4091005EF4D5 /* MarvelBrowserSwift */ = {
 			isa = PBXGroup;
 			children = (
+				48ADD1561E7F64AA004D8E94 /* JSON Parsing */,
+				489822A71DCFE45D0073D820 /* Supporting Files */,
+				0EBB3C911CCC4091005EF4D5 /* Assets.xcassets */,
 				0EBB3C8A1CCC4091005EF4D5 /* AppDelegate.swift */,
 				0E469A481D28BABE00FE7184 /* TestingAppDelegate.swift */,
 				0EBB3C8C1CCC4091005EF4D5 /* ViewController.swift */,
 				0EBB3C8E1CCC4091005EF4D5 /* Main.storyboard */,
-				0EBB3C911CCC4091005EF4D5 /* Assets.xcassets */,
 				0EBB3C931CCC4091005EF4D5 /* LaunchScreen.storyboard */,
 				0EEC90EA1D56908300A29991 /* MarvelAuthentication.swift */,
 				0EEC90E81D568CE200A29991 /* MarvelAuthenticationTests.swift */,
@@ -145,18 +147,11 @@
 				0E5325AE1D56B33E00CA326B /* MarvelKey.swift */,
 				BB170721EC25C3B61E99CE97 /* FetchCharactersMarvelService.swift */,
 				489822AC1DCFEEB70073D820 /* FetchCharactersMarvelServiceTests.swift */,
-				489822A71DCFE45D0073D820 /* Supporting Files */,
 				BB1709BEA0BF75D6CB0A3081 /* FetchCharactersRequestModel.swift */,
-				BB170C25602E68D65A446210 /* FetchCharactersResponseBuilder.swift */,
-				4885FDD41DEA6FB200A9F923 /* FetchCharactersResponseBuilderTests.swift */,
 				BB170EFBD2C55276522E8486 /* FetchCharactersResponseModel.swift */,
-				482FEACB1E7DFDD3003DC137 /* CharactersSliceResponseBuilderTests.swift */,
 				482F79C51DD6DCFA00712E9B /* HasQuery.swift */,
 				482F79C31DD6DCEA00712E9B /* HasQueryTests.swift */,
-				BB170AADE65B2258A37C9A6A /* CharacterResponseBuilderTests.swift */,
-				BB1700CB1EE255CD1AA873AF /* CharacterResponseBuilder.swift */,
 				BB170D1FA3D0E4C4CCE26D02 /* CharacterResponse.swift */,
-				BB170A28F4E1AB4B697E5008 /* CharactersSliceResponseBuilder.swift */,
 			);
 			path = MarvelBrowserSwift;
 			sourceTree = "<group>";
@@ -170,6 +165,19 @@
 				0E5325B01D56B8C500CA326B /* MarvelBrowserSwift-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48ADD1561E7F64AA004D8E94 /* JSON Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				BB1700CB1EE255CD1AA873AF /* CharacterResponseBuilder.swift */,
+				BB170AADE65B2258A37C9A6A /* CharacterResponseBuilderTests.swift */,
+				BB170A28F4E1AB4B697E5008 /* CharactersSliceResponseBuilder.swift */,
+				482FEACB1E7DFDD3003DC137 /* CharactersSliceResponseBuilderTests.swift */,
+				BB170C25602E68D65A446210 /* FetchCharactersResponseBuilder.swift */,
+				4885FDD41DEA6FB200A9F923 /* FetchCharactersResponseBuilderTests.swift */,
+			);
+			name = "JSON Parsing";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
