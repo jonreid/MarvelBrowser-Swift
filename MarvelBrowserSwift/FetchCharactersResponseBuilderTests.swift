@@ -18,4 +18,11 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
 
         XCTAssertEqual(sut.data?.offset, 123)
     }
+
+    func testBuild_WithOffset_ShouldHaveGivenOffset() {
+        let dict: [String: Any] = ["data": ["offset": 123]]
+        let sut = FetchCharactersResponseBuilder(dictionary: dict)
+
+        let response: FetchCharactersResponseModel = sut.build()
+    }
 }
