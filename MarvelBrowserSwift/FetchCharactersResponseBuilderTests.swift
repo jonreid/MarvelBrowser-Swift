@@ -7,5 +7,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         let dict: [String: Any] = ["data": 123]
 
         let sut = FetchCharactersResponseBuilder(dictionary: dict)
+
+        XCTAssertNil(sut.data)
     }
 }
