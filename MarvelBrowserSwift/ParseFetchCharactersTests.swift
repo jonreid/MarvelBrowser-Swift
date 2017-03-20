@@ -4,7 +4,7 @@
 import XCTest
 @testable import MarvelBrowserSwift
 
-class FetchCharactersResponseBuilderTests : XCTestCase {
+class ParseFetchCharactersTests: XCTestCase {
 
     private func jsonData(_ json: String) -> Data {
         return json.data(using: .utf8)!
