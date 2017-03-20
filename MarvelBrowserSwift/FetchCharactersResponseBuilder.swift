@@ -5,10 +5,7 @@ struct FetchCharactersResponseBuilder {
     let data: CharactersSliceResponseBuilder?
 
     init(dictionary dict: [String: Any]) {
-        if let dataDict = dict["data"] as? [String: Any] {
-            data = CharactersSliceResponseBuilder(dictionary: dataDict)
-        } else {
-            data = nil
-        }
+        let dataDict = dict["data"] as? [String: Any]
+        data = dataDict.map() { CharactersSliceResponseBuilder(dictionary: $0) }
     }
 }
