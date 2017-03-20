@@ -27,4 +27,13 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
 
         XCTAssertEqual(response?.offset, 123)
     }
+
+    func testBuild_WithTotal_ShouldHaveGivenTotal() {
+        let dict: [String: Any] = ["data": ["total": 123]]
+        let sut = FetchCharactersResponseBuilder(dictionary: dict)
+
+        let response = sut.build()
+
+        XCTAssertEqual(response?.total, 123)
+    }
 }
