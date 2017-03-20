@@ -7,4 +7,5 @@ enum Result<T> {
 }
 
 struct FetchCharactersResponseModel {
+    let offset: Int
 }

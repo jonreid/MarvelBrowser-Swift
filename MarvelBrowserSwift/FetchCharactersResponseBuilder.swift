@@ -10,6 +10,6 @@ struct FetchCharactersResponseBuilder {
     }
 
     func build() -> FetchCharactersResponseModel {
-        return FetchCharactersResponseModel()
+        return FetchCharactersResponseModel(offset: 0)
     }
 }
