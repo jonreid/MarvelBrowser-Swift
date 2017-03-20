@@ -4,7 +4,11 @@
 struct FetchCharactersResponseBuilder {
     let data: CharactersSliceResponseBuilder?
 
-    init(dictionary: [String: Any]) {
-        data = nil
+    init(dictionary dict: [String: Any]) {
+        if let dataDict = dict["data"] as? [String: Any] {
+            data = CharactersSliceResponseBuilder(dictionary: dataDict)
+        } else {
+            data = nil
+        }
     }
 }
