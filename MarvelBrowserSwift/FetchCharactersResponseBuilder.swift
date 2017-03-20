@@ -5,16 +5,14 @@ import Foundation
 
 private let badJSON = "Bad JSON"
 
-struct FetchCharactersResponseBuilder {
-    func parseFetchCharacters(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
-        let object = try? JSONSerialization.jsonObject(with: jsonData)
-        guard let dict = object as? [String: Any],
-              let code = dict["code"] as? Int else {
-            return .failure(badJSON)
-        }
-        if code != 200 {
-            return .failure(dict["status"] as? String ?? badJSON)
-        }
-        return .success(FetchCharactersResponseModel())
+func parseFetchCharacters(_ jsonData: Data) -> Result<FetchCharactersResponseModel> {
+    let object = try? JSONSerialization.jsonObject(with: jsonData)
+    guard let dict = object as? [String: Any],
+          let code = dict["code"] as? Int else {
+        return .failure(badJSON)
     }
+    if code != 200 {
+        return .failure(dict["status"] as? String ?? badJSON)
+    }
+    return .success(FetchCharactersResponseModel())
 }

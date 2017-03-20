@@ -6,18 +6,6 @@ import XCTest
 
 class FetchCharactersResponseBuilderTests : XCTestCase {
 
-    var sut: FetchCharactersResponseBuilder!
-
-    override func setUp() {
-        super.setUp()
-        sut = FetchCharactersResponseBuilder()
-    }
-
-    override func tearDown() {
-        sut = nil
-        super.tearDown()
-    }
-
     private func jsonData(_ json: String) -> Data {
         return json.data(using: .utf8)!
     }
@@ -25,7 +13,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
     func testParse_WithCode200_ShouldReturnSuccess() {
         let json = "{\"code\":200}"
 
-        let response = sut.parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData(json))
 
         switch response {
         case .success(_):
@@ -42,7 +30,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
                     "\"status\":\"STATUS\"" +
                 "}"
 
-        let response = sut.parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -57,7 +45,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
                 "{" +
                     "\"cod"
 
-        let response = sut.parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -70,7 +58,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
     func testParse_WithJSONArrayInsteadOfDictionary_ShouldReturnBadJSONFailure() {
         let json = "[]"
 
-        let response = sut.parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -87,7 +75,7 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
                     "\"status\":\"STATUS\"" +
                 "}"
 
-        let response = sut.parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData(json))
 
         switch response {
         case .failure(let status):
@@ -103,7 +91,7 @@ func testParse_WithValidFailureCodeButNoStatus_ShouldReturnBadJSONFailure() {
                     "\"code\":409" +
                 "}"
 
-        let response = sut.parseFetchCharacters(jsonData(json))
+        let response = parseFetchCharacters(jsonData(json))
 
         switch response {
         case .failure(let status):
