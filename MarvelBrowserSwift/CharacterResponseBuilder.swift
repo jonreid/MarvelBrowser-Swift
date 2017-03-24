@@ -8,10 +8,10 @@ struct CharacterResponseBuilder {
         name = dict["name"] as? String
     }
 
-    func build() -> CharacterResponse? {
+    func build() -> CharacterResponseModel? {
         guard let name = name else {
             return nil
         }
-        return CharacterResponse(name: name)
+        return CharacterResponseModel(name: name)
     }
 }

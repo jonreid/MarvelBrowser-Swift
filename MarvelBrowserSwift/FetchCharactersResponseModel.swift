@@ -9,5 +9,5 @@ enum Result<T> {
 struct FetchCharactersResponseModel {
     let offset: Int
     let total: Int
-    let characters: [CharacterResponse]
+    let characters: [CharacterResponseModel]
 }

@@ -16,7 +16,7 @@ struct CharactersSliceResponseBuilder {
         return array?.map() { return CharacterResponseBuilder(dictionary: $0) }
     }
 
-    func buildCharacters() -> [CharacterResponse] {
+    func buildCharacters() -> [CharacterResponseModel] {
         return results?.flatMap() { $0.build() } ?? []
     }
 }
