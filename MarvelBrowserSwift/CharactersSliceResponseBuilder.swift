@@ -17,7 +17,7 @@ struct CharactersSliceResponseBuilder {
     }
 
     func build() -> CharactersSliceResponseModel {
-        return CharactersSliceResponseModel()
+        return CharactersSliceResponseModel(offset: 0, total: 0)
     }
 
     func buildCharacters() -> [CharacterResponseModel] {

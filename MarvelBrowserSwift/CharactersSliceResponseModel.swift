@@ -2,4 +2,6 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 struct CharactersSliceResponseModel {
+    let offset: Int
+    let total: Int
 }
