@@ -91,6 +91,17 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertEqual(response?.total, 456)
     }
 
+    func testBuild_MissingOffset_ShouldReturnNil() {
+        let dict: [String: Any] = [
+                "total": 456,
+        ]
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
+
+        let response = sut.build()
+
+        XCTAssertNil(response)
+    }
+
     func testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters() {
         let dict: [String: Any] = ["results": [
                 ["name": "ONE"],
