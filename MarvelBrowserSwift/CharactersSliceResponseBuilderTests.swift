@@ -78,6 +78,16 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertEqual(sut.results?[1].name, "TWO")
     }
 
+    func testBuild_WithAllRequiredFields_ShouldHaveGivenFields() {
+        let dict: [String: Any] = [
+                "offset": 123,
+                "total": 456,
+        ]
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
+
+        let response: CharactersSliceResponseModel = sut.build()
+    }
+
     func testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters() {
         let dict: [String: Any] = ["results": [
                 ["name": "ONE"],
