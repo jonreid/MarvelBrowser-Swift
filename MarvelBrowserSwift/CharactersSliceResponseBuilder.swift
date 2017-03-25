@@ -17,10 +17,11 @@ struct CharactersSliceResponseBuilder {
     }
 
     func build() -> CharactersSliceResponseModel? {
-        guard let offset = offset else {
+        guard let offset = offset,
+              let total = total else {
             return nil
         }
-        return CharactersSliceResponseModel(offset: offset, total: total ?? 0)
+        return CharactersSliceResponseModel(offset: offset, total: total)
     }
 
     func buildCharacters() -> [CharacterResponseModel] {
