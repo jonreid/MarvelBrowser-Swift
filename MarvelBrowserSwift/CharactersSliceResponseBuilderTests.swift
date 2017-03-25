@@ -86,6 +86,9 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         let response: CharactersSliceResponseModel = sut.build()
+
+        XCTAssertEqual(response.offset, 123)
+        XCTAssertEqual(response.total, 456)
     }
 
     func testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters() {
