@@ -5,7 +5,7 @@ import Foundation
 
 private let badJSON = "Bad JSON"
 
-func parseFetchCharacters(jsonData: Data) -> Result<FetchCharactersResponseModel> {
+func parseFetchCharacters(jsonData: Data) -> FetchCharactersResponseModel {
     let object = try? JSONSerialization.jsonObject(with: jsonData)
     guard let dict = object as? [String: Any],
           let code = dict["code"] as? Int else {
@@ -14,5 +14,5 @@ func parseFetchCharacters(jsonData: Data) -> Result<FetchCharactersResponseModel
     if code != 200 {
         return .failure(dict["status"] as? String ?? badJSON)
     }
-    return .success(FetchCharactersResponseModel(offset: 0, total: 0, characters: []))
+    return .success(CharactersSliceResponseModel(offset: 0, total: 0, characters: []))
 }

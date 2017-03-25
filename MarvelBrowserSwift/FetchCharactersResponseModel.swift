@@ -6,8 +6,4 @@ enum Result<T> {
     case failure(String)
 }
 
-struct FetchCharactersResponseModel {
-    let offset: Int
-    let total: Int
-    let characters: [CharacterResponseModel]
-}
+typealias FetchCharactersResponseModel = Result<CharactersSliceResponseModel>
