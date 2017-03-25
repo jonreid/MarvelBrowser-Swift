@@ -16,7 +16,7 @@ struct CharactersSliceResponseBuilder {
         return array?.map() { return CharacterResponseBuilder(dictionary: $0) }
     }
 
-    func build() -> CharactersSliceResponseModel {
+    func build() -> CharactersSliceResponseModel? {
         return CharactersSliceResponseModel(offset: offset ?? 0, total: total ?? 0)
     }
 
