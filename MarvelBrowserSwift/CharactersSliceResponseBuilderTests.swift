@@ -113,6 +113,24 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertNil(response)
     }
 
+    func testBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters() {
+        let dict: [String: Any] = [
+                "offset": 123,
+                "total": 456,
+                "results": [
+                        ["name": "ONE"],
+                        ["name": "TWO"],
+                ],
+        ]
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
+
+        let response = sut.build()
+
+        XCTAssertEqual(response?.characters.count, 2)
+        XCTAssertEqual(response?.characters[0].name, "ONE")
+        XCTAssertEqual(response?.characters[1].name, "TWO")
+    }
+
     func testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters() {
         let dict: [String: Any] = ["results": [
                 ["name": "ONE"],
