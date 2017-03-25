@@ -21,7 +21,7 @@ struct CharactersSliceResponseBuilder {
               let total = total else {
             return nil
         }
-        return CharactersSliceResponseModel(offset: offset, total: total)
+        return CharactersSliceResponseModel(offset: offset, total: total, characters: [])
     }
 
     func buildCharacters() -> [CharacterResponseModel] {
