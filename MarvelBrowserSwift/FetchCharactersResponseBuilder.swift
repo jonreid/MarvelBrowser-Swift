@@ -8,15 +8,4 @@ struct FetchCharactersResponseBuilder {
         let dataDict = dict["data"] as? [String: Any]
         data = dataDict.map() { CharactersSliceResponseBuilder(dictionary: $0) }
     }
-
-    func build() -> FetchCharactersResponseModel? {
-        guard let data = data else {
-            return nil
-        }
-        return FetchCharactersResponseModel(
-                offset: data.offset ?? 0,
-                total: data.total ?? 0,
-                characters: data.buildCharacters()
-        )
-    }
 }
