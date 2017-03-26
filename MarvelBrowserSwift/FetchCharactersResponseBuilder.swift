@@ -10,7 +10,9 @@ struct FetchCharactersResponseBuilder {
     }
 
     func build() -> FetchCharactersResponseModel {
-        let responseModel = data?.build() ?? CharactersSliceResponseModel(offset: 0, total: 0, characters: [])
+        guard let responseModel = data?.build() else {
+            return .failure("Bad data")
+        }
         return .success(responseModel)
     }
 }
