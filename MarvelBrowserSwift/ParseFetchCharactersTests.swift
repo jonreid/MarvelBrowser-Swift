@@ -10,19 +10,6 @@ class ParseFetchCharactersTests: XCTestCase {
         return json.data(using: .utf8)!
     }
 
-    func testParse_WithCode200_ShouldReturnSuccess() {
-        let json = "{\"code\":200}"
-
-        let response = parseFetchCharacters(jsonData: jsonData(json))
-
-        switch response {
-        case .success(_):
-            break
-        default:
-            XCTFail("Expected success, got \(response)")
-        }
-    }
-
     func testParse_WithCode409AndStatus_ShouldReturnFailureWithStatus() {
         let json =
                 "{" +
@@ -101,4 +88,24 @@ func testParse_WithValidFailureCodeButNoStatus_ShouldReturnBadJSONFailure() {
         }
     }
 
+    func testParse_WithCode200AndRequiredData_ShouldReturnSuccessWithGivenData() {
+        let json =
+                "{" +
+                    "\"code\":200," +
+                    "\"data\":{" +
+                        "\"offset\":123," +
+                        "\"total\":456" +
+                    "}" +
+                "}"
+
+        let response = parseFetchCharacters(jsonData: jsonData(json))
+
+        switch response {
+        case let .success(responseModel):
+            XCTAssertEqual(responseModel.offset, 123)
+            XCTAssertEqual(responseModel.total, 456)
+        default:
+            XCTFail("Expected success, got \(response)")
+        }
+    }
 }
