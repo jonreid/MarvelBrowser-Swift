@@ -33,7 +33,7 @@ class ParseFetchCharactersTests: XCTestCase {
         let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
-        case .failure(let status):
+        case let .failure(status):
             XCTAssertEqual(status, "STATUS")
         default:
             XCTFail("Expected failure, got \(response)")
@@ -48,7 +48,7 @@ class ParseFetchCharactersTests: XCTestCase {
         let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
-        case .failure(let status):
+        case let .failure(status):
             XCTAssertEqual(status, "Bad JSON")
         default:
             XCTFail("Expected failure, got \(response)")
@@ -61,7 +61,7 @@ class ParseFetchCharactersTests: XCTestCase {
         let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
-        case .failure(let status):
+        case let .failure(status):
             XCTAssertEqual(status, "Bad JSON")
         default:
             XCTFail("Expected failure, got \(response)")
@@ -78,7 +78,7 @@ class ParseFetchCharactersTests: XCTestCase {
         let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
-        case .failure(let status):
+        case let .failure(status):
             XCTAssertEqual(status, "Bad JSON")
         default:
             XCTFail("Expected failure, got \(response)")
@@ -94,7 +94,7 @@ func testParse_WithValidFailureCodeButNoStatus_ShouldReturnBadJSONFailure() {
         let response = parseFetchCharacters(jsonData: jsonData(json))
 
         switch response {
-        case .failure(let status):
+        case let .failure(status):
             XCTAssertEqual(status, "Bad JSON")
         default:
             XCTFail("Expected failure, got \(response)")
