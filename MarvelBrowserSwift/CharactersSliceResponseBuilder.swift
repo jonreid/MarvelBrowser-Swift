@@ -13,7 +13,7 @@ struct CharactersSliceResponseBuilder {
     }
 
     private static func parseResults(from array: Array<[String: Any]>?) -> [CharacterResponseBuilder]? {
-        return array?.map() { return CharacterResponseBuilder(dictionary: $0) }
+        return array?.map { return CharacterResponseBuilder(dictionary: $0) }
     }
 
     func build() -> CharactersSliceResponseModel? {
@@ -25,6 +25,6 @@ struct CharactersSliceResponseBuilder {
     }
 
     private func buildCharacters() -> [CharacterResponseModel] {
-        return results?.flatMap() { $0.build() } ?? []
+        return results?.flatMap { $0.build() } ?? []
     }
 }

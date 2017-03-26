@@ -6,11 +6,11 @@ struct FetchCharactersResponseBuilder {
 
     init(dictionary dict: [String: Any]) {
         let dataDict = dict["data"] as? [String: Any]
-        data = dataDict.map() { CharactersSliceResponseBuilder(dictionary: $0) }
+        data = dataDict.map { CharactersSliceResponseBuilder(dictionary: $0) }
     }
 
     func build() -> FetchCharactersResponseModel {
         return data?.build()
-                    .flatMap() { .success($0) } ?? .failure("Bad data")
+                    .flatMap { .success($0) } ?? .failure("Bad data")
     }
 }
