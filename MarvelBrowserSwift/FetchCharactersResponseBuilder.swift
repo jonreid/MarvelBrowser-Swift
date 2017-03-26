@@ -10,9 +10,7 @@ struct FetchCharactersResponseBuilder {
     }
 
     func build() -> FetchCharactersResponseModel {
-        guard let responseModel = data?.build() else {
-            return .failure("Bad data")
-        }
-        return .success(responseModel)
+        return data?.build()
+                    .flatMap() { .success($0) } ?? .failure("Bad data")
     }
 }
