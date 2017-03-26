@@ -14,5 +14,6 @@ func parseFetchCharacters(jsonData: Data) -> FetchCharactersResponseModel {
     if code != 200 {
         return .failure(dict["status"] as? String ?? badJSON)
     }
-    return .success(CharactersSliceResponseModel(offset: 0, total: 0, characters: []))
+    let builder = FetchCharactersResponseBuilder(dictionary: dict)
+    return builder.build()
 }
