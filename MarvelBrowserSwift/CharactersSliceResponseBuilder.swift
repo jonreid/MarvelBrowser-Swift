@@ -25,6 +25,6 @@ struct CharactersSliceResponseBuilder {
     }
 
     private func buildCharacters() -> [CharacterResponseModel] {
-        return results?.flatMap() { $0.build() } ?? [CharacterResponseModel(name: "DUMMY")]
+        return results?.flatMap() { $0.build() } ?? []
     }
 }
