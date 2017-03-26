@@ -113,15 +113,20 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertNil(response)
     }
 
+    private func addRequiredFields(to dict: [String: Any]) -> [String: Any] {
+        var dictPlusData = dict
+        dictPlusData["offset"] = 0
+        dictPlusData["total"] = 0
+        return dictPlusData
+    }
+
     func testBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters() {
-        let dict: [String: Any] = [
-                "offset": 123,
-                "total": 456,
+        let dict = addRequiredFields(to: [
                 "results": [
                         ["name": "ONE"],
                         ["name": "TWO"],
                 ],
-        ]
+        ])
         let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         let response = sut.build()
@@ -132,14 +137,12 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
     }
 
     func testBuild_WithRequiredFieldsPlusTwoResultsButFirstCharacterMissingName_ShouldHaveOneCharacter() {
-        let dict: [String: Any] = [
-                "offset": 123,
-                "total": 456,
+        let dict = addRequiredFields(to: [
                 "results": [
                         [:],
                         ["name": "TWO"],
                 ],
-        ]
+        ])
         let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
         let response = sut.build()
