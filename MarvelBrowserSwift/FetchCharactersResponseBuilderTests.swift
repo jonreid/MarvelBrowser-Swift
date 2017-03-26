@@ -26,6 +26,14 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
         ]]
         let sut = FetchCharactersResponseBuilder(dictionary: dict)
 
-        let response: FetchCharactersResponseModel = sut.build()
+        let response = sut.build()
+
+        switch response {
+        case let .success(responseModel):
+            XCTAssertEqual(responseModel.offset, 123)
+            XCTAssertEqual(responseModel.total, 456)
+        default:
+            XCTFail("Expected success, got \(response)")
+        }
     }
 }
