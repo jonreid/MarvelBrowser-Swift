@@ -36,4 +36,18 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
             XCTFail("Expected success, got \(response)")
         }
     }
+
+    func testBuild_WithoutData_ShouldYieldFailure() {
+        let dict: [String: Any] = [:]
+        let sut = FetchCharactersResponseBuilder(dictionary: dict)
+
+        let response = sut.build()
+
+        switch response {
+        case let .failure(status):
+            XCTAssertEqual(status, "Bad data")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
+    }
 }
