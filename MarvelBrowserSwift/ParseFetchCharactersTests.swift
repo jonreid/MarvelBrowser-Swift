@@ -108,4 +108,23 @@ func testParse_WithValidFailureCodeButNoStatus_ShouldReturnBadJSONFailure() {
             XCTFail("Expected success, got \(response)")
         }
     }
+
+    func testParse_WithCode200ButMissingRequiredDataField_ShouldReturnFailure() {
+        let json =
+                "{" +
+                    "\"code\":200," +
+                    "\"data\":{" +
+                        "\"offset\":123" +
+                    "}" +
+                "}"
+
+        let response = parseFetchCharacters(jsonData: jsonData(json))
+
+        switch response {
+        case let .failure(status):
+            XCTAssertEqual(status, "Bad data")
+        default:
+            XCTFail("Expected failure, got \(response)")
+        }
+    }
 }
