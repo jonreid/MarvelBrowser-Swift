@@ -150,4 +150,13 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertEqual(response?.characters.count, 1)
         XCTAssertEqual(response?.characters[0].name, "TWO")
     }
+
+    func testBuild_WithRequiredFieldsButNoResults_ShouldHaveEmptyCharactersArray() {
+        let dict = addRequiredFields(to: [:])
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
+
+        let response = sut.build()
+
+        XCTAssertEqual(response?.characters.count, 0)
+    }
 }
