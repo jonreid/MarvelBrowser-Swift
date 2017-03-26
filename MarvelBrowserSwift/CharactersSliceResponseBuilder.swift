@@ -24,7 +24,7 @@ struct CharactersSliceResponseBuilder {
         return CharactersSliceResponseModel(offset: offset, total: total, characters: buildCharacters())
     }
 
-    func buildCharacters() -> [CharacterResponseModel] {
+    private func buildCharacters() -> [CharacterResponseModel] {
         return results?.flatMap() { $0.build() } ?? []
     }
 }
