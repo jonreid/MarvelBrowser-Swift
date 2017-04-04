@@ -9,11 +9,20 @@ struct CharactersSliceResponseBuilder {
     init(dictionary dict: [String: Any]) {
         offset = dict["offset"] as? Int
         total = dict["total"] as? Int
-        results = type(of: self).parseResults(from: dict["results"] as? Array<[String: Any]>)
+        results = type(of: self).parseResults(from: dict["results"] as? Array<Any>)
     }
 
-    private static func parseResults(from array: Array<[String: Any]>?) -> [CharacterResponseBuilder]? {
-        return array?.map { return CharacterResponseBuilder(dictionary: $0) }
+    private static func parseResults(from array: Array<Any>?) -> [CharacterResponseBuilder]? {
+        guard let array = array else {
+            return nil
+        }
+        var result: [CharacterResponseBuilder] = []
+        for obj in array {
+            if let dict = obj as? [String: Any] {
+                result.append(CharacterResponseBuilder(dictionary: dict))
+            }
+        }
+        return result
     }
 
     func build() -> CharactersSliceResponseModel? {
