@@ -46,25 +46,6 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertNil(sut.results)
     }
     
-    func testInit_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder() {
-        let dict: [String: Any] = ["results": ["DUMMY"]]
-
-        let sut = CharactersSliceResponseBuilder(dictionary: dict)
-
-        XCTAssertEqual(sut.results?.count ?? 0, 0)
-    }
-
-    func testInit_WithOneResult_ShouldCaptureOneCharacterInBuilder() {
-        let dict: [String: Any] = ["results": [
-                ["name": "ONE"],
-        ]]
-
-        let sut = CharactersSliceResponseBuilder(dictionary: dict)
-
-        XCTAssertEqual(sut.results?.count, 1)
-        XCTAssertEqual(sut.results?[0].name, "ONE")
-    }
-
     func testInit_WithTwoResults_ShouldCaptureTwoCharactersInBuilder() {
         let dict: [String: Any] = ["results": [
                 ["name": "ONE"],
@@ -76,6 +57,18 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
         XCTAssertEqual(sut.results?.count, 2)
         XCTAssertEqual(sut.results?[0].name, "ONE")
         XCTAssertEqual(sut.results?[1].name, "TWO")
+    }
+
+    func testInit_WithTwoResultsButFirstNotDictionary_ShouldCaptureValidSecondResult() {
+        let dict: [String: Any] = ["results": [
+                "DUMMY",
+                ["name": "TWO"],
+        ]]
+
+        let sut = CharactersSliceResponseBuilder(dictionary: dict)
+
+        XCTAssertEqual(sut.results?.count, 1)
+        XCTAssertEqual(sut.results?[0].name, "TWO")
     }
 
     func testBuild_WithAllRequiredFields_ShouldHaveGivenFields() {
