@@ -23,10 +23,10 @@ struct FetchCharactersMarvelService {
             return
         }
         let dataTask = session.dataTask(with: url) { data, response, error in
-            print("error: \(error)")
-            print("response: \(response)")
+            print("error: \(String(describing: error))")
+            print("response: \(String(describing: response))")
             let str = String(data: data ?? Data(), encoding: .utf8)
-            print("data: \(str)")
+            print("data: \(String(describing: str))")
         }
         dataTask.resume()
     }
