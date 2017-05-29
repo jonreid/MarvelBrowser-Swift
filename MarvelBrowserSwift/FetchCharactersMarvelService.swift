@@ -29,6 +29,7 @@ struct FetchCharactersMarvelService {
             let str = String(data: data ?? Data(), encoding: .utf8)
             print("data: \(String(describing: str))")
         }
+        networkRequest.start(dataTask)
         dataTask.resume()
     }
 
