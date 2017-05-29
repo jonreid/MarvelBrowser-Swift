@@ -5,7 +5,6 @@
 import XCTest
 
 // swiftlint:disable implicitly_unwrapped_optional
-// swiftlint:disable trailing_closure
 
 class PartialMockURLSessionDataTask: URLSessionDataTask {
     private var resumeCallCount = 0
@@ -33,11 +32,8 @@ class MockURLSession: URLSessionProtocol {
 
     func verifyDataTask(urlMatcher: ((URL?) -> Bool), file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(dataTaskCallCount, 1, "call count", file: file, line: line)
-        XCTAssertTrue(
-                urlMatcher(dataTaskLastURL),
-                "Actual URL was \(String(describing: dataTaskLastURL))",
-                file: file,
-                line: line)
+        XCTAssertTrue(urlMatcher(dataTaskLastURL), "Actual URL was \(String(describing: dataTaskLastURL))",
+                                 file: file, line: line)
     }
 }
 
