@@ -19,7 +19,7 @@ struct FetchCharactersMarvelService {
         self.authParametersGenerator = authParametersGenerator
     }
 
-    func fetchCharacters(requestModel: FetchCharactersRequestModel) {
+    func fetchCharacters(requestModel: FetchCharactersRequestModel, networkRequest: NetworkRequest) {
         guard let url = makeURL(requestModel: requestModel) else {
             return
         }

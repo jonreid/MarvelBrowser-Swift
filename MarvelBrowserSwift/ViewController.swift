@@ -13,7 +13,7 @@ class ViewController: UIViewController {
             return MarvelAuthentication().urlParameters()
         })
         let requestModel = FetchCharactersRequestModel(namePrefix: "Spider", pageSize: 1, offset: 0)
-        service.fetchCharacters(requestModel: requestModel)
+        service.fetchCharacters(requestModel: requestModel, networkRequest: NetworkRequest())
     }
 
 }

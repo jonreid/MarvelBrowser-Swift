@@ -62,19 +62,19 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
     }
 
     func testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint() {
-        sut.fetchCharacters(requestModel: dummyRequestModel())
+        sut.fetchCharacters(requestModel: dummyRequestModel(), networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.host == "gateway.marvel.com" })
     }
 
     func testFetchCharacters_ShouldMakeDataTaskWithSecureConnection() {
-        sut.fetchCharacters(requestModel: dummyRequestModel())
+        sut.fetchCharacters(requestModel: dummyRequestModel(), networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.scheme == "https" })
     }
 
     func testFetchCharacters_ShouldMakeDataTaskForCharactersAPI() {
-        sut.fetchCharacters(requestModel: dummyRequestModel())
+        sut.fetchCharacters(requestModel: dummyRequestModel(), networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in url?.path == "/v1/public/characters" })
     }
@@ -82,7 +82,7 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
     func testFetchCharacters_WithNamePrefix_ShouldMakeDataTaskWithQueryForNameStartsWith() {
         let requestModel = FetchCharactersRequestModel(namePrefix: "NAME", pageSize: 10, offset: 30)
 
-        sut.fetchCharacters(requestModel: requestModel)
+        sut.fetchCharacters(requestModel: requestModel, networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "nameStartsWith", value: "NAME") ?? false
@@ -92,7 +92,7 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
     func testFetchCharacters_WithNamePrefix_ShouldHandleSpacesInNameStartsWith() {
         let requestModel = FetchCharactersRequestModel(namePrefix: "ab cd", pageSize: 10, offset: 30)
 
-        sut.fetchCharacters(requestModel: requestModel)
+        sut.fetchCharacters(requestModel: requestModel, networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "nameStartsWith", value: "ab cd") ?? false
@@ -102,7 +102,7 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
     func testFetchCharacters_WithPageSize_ShouldMakeDataTaskWithQueryForLimit() {
         let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
 
-        sut.fetchCharacters(requestModel: requestModel)
+        sut.fetchCharacters(requestModel: requestModel, networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "limit", value: "10") ?? false
@@ -112,7 +112,7 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
     func testFetchCharacters_WithOffset_ShouldMakeDataTaskWithQueryForOffset() {
         let requestModel = FetchCharactersRequestModel(namePrefix: "DUMMY", pageSize: 10, offset: 30)
 
-        sut.fetchCharacters(requestModel: requestModel)
+        sut.fetchCharacters(requestModel: requestModel, networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "offset", value: "30") ?? false
@@ -124,7 +124,7 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
                 session: mockURLSession,
                 authParametersGenerator: { return "&FOO=BAR" })
 
-        sutWithAuthParameters.fetchCharacters(requestModel: dummyRequestModel())
+        sutWithAuthParameters.fetchCharacters(requestModel: dummyRequestModel(), networkRequest: NetworkRequest())
 
         mockURLSession.verifyDataTask(urlMatcher: { url in
             url?.hasQuery(name: "FOO", value: "BAR") ?? false
@@ -132,7 +132,7 @@ class FetchCharactersMarvelServiceTests: XCTestCase {
     }
 
     func testFetchCharacters_ShouldStartDataTask() {
-        sut.fetchCharacters(requestModel: dummyRequestModel())
+        sut.fetchCharacters(requestModel: dummyRequestModel(), networkRequest: NetworkRequest())
 
         mockDataTask.verifyResume()
     }
