@@ -5,5 +5,6 @@ import Foundation
 
 class NetworkRequest {
     func start(_ task: URLSessionDataTask) {
+        task.resume()
     }
 }

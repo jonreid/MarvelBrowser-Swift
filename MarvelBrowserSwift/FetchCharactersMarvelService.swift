@@ -30,7 +30,6 @@ struct FetchCharactersMarvelService {
             print("data: \(String(describing: str))")
         }
         networkRequest.start(dataTask)
-        dataTask.resume()
     }
 
     private func makeURL(requestModel: FetchCharactersRequestModel) -> URL? {
