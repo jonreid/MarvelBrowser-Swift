@@ -1,14 +1,14 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-import XCTest
 @testable import MarvelBrowserSwift
+import XCTest
 
-class MarvelAuthenticationAcceptanceTests : XCTestCase {
+class MarvelAuthenticationAcceptanceTests: XCTestCase {
 
     func testValidCallToMarvel_ShouldGetHTTPStatusCode200() {
         let queryWithoutAuth = "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider"
-        let fullQuery = queryWithoutAuth + MarvelAuthentication.init().urlParameters()
+        let fullQuery = queryWithoutAuth + MarvelAuthentication().urlParameters()
         guard let validQueryUrl = URL(string: fullQuery) else {
             XCTFail("Invalid URL '\(fullQuery)'")
             return
@@ -17,7 +17,7 @@ class MarvelAuthenticationAcceptanceTests : XCTestCase {
         var httpResponse: HTTPURLResponse?
         var responseError: Error?
         let promise = expectation(description: "Completion handler invoked")
-        startDataTask(with: validQueryUrl) { data, response, error in
+        startDataTask(with: validQueryUrl) { _, response, error in
             httpResponse = response as? HTTPURLResponse
             responseError = error
             promise.fulfill()

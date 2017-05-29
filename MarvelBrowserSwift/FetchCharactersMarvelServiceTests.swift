@@ -1,8 +1,11 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-import XCTest
 @testable import MarvelBrowserSwift
+import XCTest
+
+// swiftlint:disable implicitly_unwrapped_optional
+// swiftlint:disable trailing_closure
 
 class PartialMockURLSessionDataTask: URLSessionDataTask {
     private var resumeCallCount = 0
@@ -21,19 +24,24 @@ class MockURLSession: URLSessionProtocol {
     private var dataTaskCallCount = 0
     private var dataTaskLastURL: URL?
 
-    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+                    -> URLSessionDataTask {
         dataTaskCallCount += 1
         dataTaskLastURL = url
-        return dataTaskReturnValue;
+        return dataTaskReturnValue
     }
 
     func verifyDataTask(urlMatcher: ((URL?) -> Bool), file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(dataTaskCallCount, 1, "call count", file: file, line: line)
-        XCTAssertTrue(urlMatcher(dataTaskLastURL), "Actual URL was \(String(describing: dataTaskLastURL))", file: file, line: line)
+        XCTAssertTrue(
+                urlMatcher(dataTaskLastURL),
+                "Actual URL was \(String(describing: dataTaskLastURL))",
+                file: file,
+                line: line)
     }
 }
 
-class FetchCharactersMarvelServiceTests : XCTestCase {
+class FetchCharactersMarvelServiceTests: XCTestCase {
     var mockDataTask: PartialMockURLSessionDataTask!
     var mockURLSession: MockURLSession!
     var sut: FetchCharactersMarvelService!
@@ -116,7 +124,8 @@ class FetchCharactersMarvelServiceTests : XCTestCase {
     }
 
     func testFetchCharacters_ShouldIncludeGeneratedAuthenticationParameters() {
-        let sutWithAuthParameters = FetchCharactersMarvelService(session: mockURLSession,
+        let sutWithAuthParameters = FetchCharactersMarvelService(
+                session: mockURLSession,
                 authParametersGenerator: { return "&FOO=BAR" })
 
         sutWithAuthParameters.fetchCharacters(requestModel: dummyRequestModel())

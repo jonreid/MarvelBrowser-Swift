@@ -1,11 +1,10 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-
-import XCTest
 @testable import MarvelBrowserSwift
+import XCTest
 
-class CharacterResponseBuilderTests : XCTestCase {
+class CharacterResponseBuilderTests: XCTestCase {
 
     func testInit_WithNonStringName_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["name": 123]

@@ -1,13 +1,13 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-import XCTest
 @testable import MarvelBrowserSwift
+import XCTest
 
 class ParseFetchCharactersTests: XCTestCase {
 
     private func jsonData(_ json: String) -> Data {
-        return json.data(using: .utf8)!
+        return json.data(using: .utf8)! // swiftlint:disable:this force_unwrapping
     }
 
     func testParse_WithCode409AndStatus_ShouldReturnFailureWithStatus() {

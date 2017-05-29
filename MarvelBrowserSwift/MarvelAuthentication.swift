@@ -22,7 +22,7 @@ struct MarvelAuthentication {
     }
     
     private static func timestamp() -> String {
-        return String(Date.init().timeIntervalSinceReferenceDate)
+        return String(Date().timeIntervalSinceReferenceDate)
     }
     
 }

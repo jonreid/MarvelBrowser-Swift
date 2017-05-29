@@ -1,7 +1,10 @@
-import XCTest
-@testable import MarvelBrowserSwift
+//  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-class FetchCharactersResponseBuilderTests : XCTestCase {
+@testable import MarvelBrowserSwift
+import XCTest
+
+class FetchCharactersResponseBuilderTests: XCTestCase {
 
     func testInit_WithNonDictionaryData_ShouldCaptureNilInBuilder() {
         let dict: [String: Any] = ["data": 123]
@@ -20,10 +23,12 @@ class FetchCharactersResponseBuilderTests : XCTestCase {
     }
 
     func testBuild_WithDataWithRequiredFields_ShouldYieldSuccessWithSlice() {
-        let dict: [String: Any] = ["data": [
+        let dict: [String: Any] = [
+            "data": [
                 "offset": 123,
                 "total": 456,
-        ]]
+            ],
+        ]
         let sut = FetchCharactersResponseBuilder(dictionary: dict)
 
         let response = sut.build()

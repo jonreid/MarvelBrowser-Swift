@@ -1,8 +1,8 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-import XCTest
 @testable import MarvelBrowserSwift
+import XCTest
 
 class CharactersSliceResponseBuilderTests: XCTestCase {
 
@@ -47,10 +47,12 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
     }
     
     func testInit_WithTwoResults_ShouldCaptureTwoCharactersInBuilder() {
-        let dict: [String: Any] = ["results": [
+        let dict: [String: Any] = [
+            "results": [
                 ["name": "ONE"],
                 ["name": "TWO"],
-        ]]
+            ],
+        ]
 
         let sut = CharactersSliceResponseBuilder(dictionary: dict)
 
@@ -60,10 +62,12 @@ class CharactersSliceResponseBuilderTests: XCTestCase {
     }
 
     func testInit_WithTwoResultsButFirstNotDictionary_ShouldCaptureValidSecondResult() {
-        let dict: [String: Any] = ["results": [
+        let dict: [String: Any] = [
+            "results": [
                 "DUMMY",
                 ["name": "TWO"],
-        ]]
+            ],
+        ]
 
         let sut = CharactersSliceResponseBuilder(dictionary: dict)
 

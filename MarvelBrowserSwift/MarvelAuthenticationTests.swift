@@ -1,10 +1,12 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-import XCTest
 @testable import MarvelBrowserSwift
+import XCTest
 
-class MarvelAuthenticationTests : XCTestCase {
+// swiftlint:disable implicitly_unwrapped_optional
+
+class MarvelAuthenticationTests: XCTestCase {
     var sut: MarvelAuthentication!
     
     override func setUp() {
@@ -49,7 +51,7 @@ class MarvelAuthenticationTests : XCTestCase {
         let params1 = sut.urlParameters()
         let params2 = sut.urlParameters()
         
-        XCTAssertNotEqual(params1, params2);
+        XCTAssertNotEqual(params1, params2)
     }
     
 }

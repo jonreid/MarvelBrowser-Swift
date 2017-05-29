@@ -3,6 +3,8 @@
 
 import UIKit
 
+// swiftlint:disable trailing_closure
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {

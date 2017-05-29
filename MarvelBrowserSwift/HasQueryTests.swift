@@ -3,7 +3,9 @@
 
 import XCTest
 
-class HasQueryTests : XCTestCase {
+// swiftlint:disable force_unwrapping
+
+class HasQueryTests: XCTestCase {
 
     func testShouldMatchURLContainingMatchingKeyAndValueInFirstPosition() {
         let url = URL(string: "http://dummy.com/dummy?key1=value1")!

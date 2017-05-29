@@ -4,7 +4,8 @@
 import Foundation
 
 protocol URLSessionProtocol {
-    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+                    -> URLSessionDataTask
 }
 
 extension URLSession: URLSessionProtocol {}
@@ -32,7 +33,8 @@ struct FetchCharactersMarvelService {
     }
 
     private func makeURL(requestModel: FetchCharactersRequestModel) -> URL? {
-        guard let namePrefix = requestModel.namePrefix.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+        guard let namePrefix = requestModel.namePrefix
+                .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return nil
         }
         return URL(string: "https://gateway.marvel.com/v1/public/characters" +

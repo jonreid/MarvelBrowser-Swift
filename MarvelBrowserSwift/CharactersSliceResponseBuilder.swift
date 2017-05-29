@@ -1,5 +1,5 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
 struct CharactersSliceResponseBuilder {
     let offset: Int?
@@ -9,10 +9,10 @@ struct CharactersSliceResponseBuilder {
     init(dictionary dict: [String: Any]) {
         offset = dict["offset"] as? Int
         total = dict["total"] as? Int
-        results = type(of: self).parseResults(from: dict["results"] as? Array<Any>)
+        results = type(of: self).parseResults(from: dict["results"] as? [Any])
     }
 
-    private static func parseResults(from array: Array<Any>?) -> [CharacterResponseBuilder]? {
+    private static func parseResults(from array: [Any]?) -> [CharacterResponseBuilder]? {
         return array?.flatMap { $0 as? [String: Any] }
                      .map { CharacterResponseBuilder(dictionary: $0) }
     }
