@@ -27,4 +27,13 @@ class NetworkRequestTests: XCTestCase {
         mockTask.verifyResume()
     }
 
+    func testStartTask_ShouldRetainGivenTask() {
+        let mockTask = MockURLSessionTask()
+        let sut = NetworkRequest()
+
+        sut.start(mockTask)
+
+        sut.currentTask
+    }
+
 }
