@@ -4,5 +4,10 @@
 @testable import MarvelBrowserSwift
 import XCTest
 
+class MockURLSessionTask: URLSessionTaskProtocol {
+    func resume() {
+    }
+}
+
 class NetworkRequestTests: XCTestCase {
 }
