@@ -12,7 +12,7 @@ class MockURLSessionTask: URLSessionTaskProtocol {
     }
     
     func verifyResume() {
-        XCTAssertEqual(resumeCallCount, 1)
+        XCTAssertEqual(resumeCallCount, 1, "call count")
     }
 }
 
