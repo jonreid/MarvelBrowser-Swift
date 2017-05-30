@@ -10,7 +10,7 @@ protocol URLSessionTaskProtocol: class {
 extension URLSessionTask: URLSessionTaskProtocol {}
 
 class NetworkRequest {
-    var currentTask: URLSessionTaskProtocol?
+    private(set) var currentTask: URLSessionTaskProtocol?
 
     func start(_ task: URLSessionTaskProtocol) {
         currentTask = task
