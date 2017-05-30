@@ -16,10 +16,22 @@ class MockURLSessionTask: URLSessionTaskProtocol {
     }
 }
 
+// swiftlint:disable implicitly_unwrapped_optional force_unwrap
+
 class NetworkRequestTests: XCTestCase {
-    
+    var mockTask: MockURLSessionTask!
+
+    override func setUp() {
+        super.setUp()
+        mockTask = MockURLSessionTask()
+    }
+
+    override func tearDown() {
+        mockTask = nil
+        super.tearDown()
+    }
+
     func testStartTask_ShouldTellTaskToResume() {
-        let mockTask = MockURLSessionTask()
         let sut = NetworkRequest()
         
         sut.start(mockTask)
@@ -28,12 +40,11 @@ class NetworkRequestTests: XCTestCase {
     }
 
     func testStartTask_ShouldRetainGivenTask() {
-        let mockTask = MockURLSessionTask()
         let sut = NetworkRequest()
 
         sut.start(mockTask)
         
-        XCTAssertTrue(sut.currentTask! === mockTask) // swiftlint:disable:this force_unwrap
+        XCTAssertTrue(sut.currentTask! === mockTask)
     }
 
 }
