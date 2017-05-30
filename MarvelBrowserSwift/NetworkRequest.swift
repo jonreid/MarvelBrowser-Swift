@@ -11,6 +11,6 @@ extension URLSessionTask: URLSessionTaskProtocol {}
 
 class NetworkRequest {
     func start(_ task: URLSessionTaskProtocol) {
-//        task.resume()
+        task.resume()
     }
 }
