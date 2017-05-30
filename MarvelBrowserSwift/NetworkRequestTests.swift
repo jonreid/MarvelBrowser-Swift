@@ -10,6 +10,10 @@ class MockURLSessionTask: URLSessionTaskProtocol {
     func resume() {
         resumeCallCount += 1
     }
+    
+    func verifyResume() {
+        XCTAssertEqual(resumeCallCount, 1)
+    }
 }
 
 class NetworkRequestTests: XCTestCase {
