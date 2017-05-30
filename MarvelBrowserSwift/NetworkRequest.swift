@@ -10,7 +10,7 @@ protocol URLSessionTaskProtocol {
 extension URLSessionTask: URLSessionTaskProtocol {}
 
 class NetworkRequest {
-    func start(_ task: URLSessionTask) {
+    func start(_ task: URLSessionTaskProtocol) {
         task.resume()
     }
 }
