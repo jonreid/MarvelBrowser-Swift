@@ -10,6 +10,8 @@ protocol URLSessionTaskProtocol {
 extension URLSessionTask: URLSessionTaskProtocol {}
 
 class NetworkRequest {
+    var currentTask: URLSessionTaskProtocol?
+
     func start(_ task: URLSessionTaskProtocol) {
         task.resume()
     }
