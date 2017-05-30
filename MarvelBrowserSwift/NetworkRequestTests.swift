@@ -11,8 +11,8 @@ class MockURLSessionTask: URLSessionTaskProtocol {
         resumeCallCount += 1
     }
     
-    func verifyResume() {
-        XCTAssertEqual(resumeCallCount, 1, "call count")
+    func verifyResume(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(resumeCallCount, 1, "call count", file: file, line: line)
     }
 }
 
