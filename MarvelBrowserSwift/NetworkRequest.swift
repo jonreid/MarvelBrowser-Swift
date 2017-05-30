@@ -13,6 +13,7 @@ class NetworkRequest {
     var currentTask: URLSessionTaskProtocol?
 
     func start(_ task: URLSessionTaskProtocol) {
+        currentTask = task
         task.resume()
     }
 }
