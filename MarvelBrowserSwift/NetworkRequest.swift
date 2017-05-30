@@ -3,7 +3,7 @@
 
 import Foundation
 
-protocol URLSessionTaskProtocol {
+protocol URLSessionTaskProtocol: class {
     func resume()
 }
 

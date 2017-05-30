@@ -32,8 +32,8 @@ class NetworkRequestTests: XCTestCase {
         let sut = NetworkRequest()
 
         sut.start(mockTask)
-
-        sut.currentTask
+        
+        XCTAssertTrue(sut.currentTask! === mockTask) // swiftlint:disable:this force_unwrap
     }
 
 }
