@@ -20,28 +20,27 @@ class MockURLSessionTask: URLSessionTaskProtocol {
 
 class NetworkRequestTests: XCTestCase {
     var mockTask: MockURLSessionTask!
+    var sut: NetworkRequest!
 
     override func setUp() {
         super.setUp()
         mockTask = MockURLSessionTask()
+        sut = NetworkRequest()
     }
 
     override func tearDown() {
         mockTask = nil
+        sut = nil
         super.tearDown()
     }
 
     func testStartTask_ShouldTellTaskToResume() {
-        let sut = NetworkRequest()
-        
         sut.start(mockTask)
         
         mockTask.verifyResume()
     }
 
     func testStartTask_ShouldRetainGivenTask() {
-        let sut = NetworkRequest()
-
         sut.start(mockTask)
         
         XCTAssertTrue(sut.currentTask! === mockTask)
