@@ -5,9 +5,4 @@
 import XCTest
 
 class NetworkRequestTests: XCTestCase {
-
-    func testExample() {
-        XCTFail("Tests not yet implemented in NetworkRequestTests")
-    }
-    
 }
