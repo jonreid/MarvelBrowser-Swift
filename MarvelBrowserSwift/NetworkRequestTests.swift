@@ -5,7 +5,10 @@
 import XCTest
 
 class MockURLSessionTask: URLSessionTaskProtocol {
+    private var resumeCallCount = 0
+
     func resume() {
+        resumeCallCount += 1
     }
 }
 
