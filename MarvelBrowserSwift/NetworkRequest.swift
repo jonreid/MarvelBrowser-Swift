@@ -3,6 +3,10 @@
 
 import Foundation
 
+protocol URLSessionTaskProtocol {}
+
+extension URLSessionTask: URLSessionTaskProtocol {}
+
 class NetworkRequest {
     func start(_ task: URLSessionTask) {
         task.resume()
