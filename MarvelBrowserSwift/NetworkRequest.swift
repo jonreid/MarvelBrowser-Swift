@@ -3,7 +3,9 @@
 
 import Foundation
 
-protocol URLSessionTaskProtocol {}
+protocol URLSessionTaskProtocol {
+    func resume()
+}
 
 extension URLSessionTask: URLSessionTaskProtocol {}
 
