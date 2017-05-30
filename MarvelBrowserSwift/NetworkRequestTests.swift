@@ -21,16 +21,24 @@ class MockURLSessionTask: URLSessionTaskProtocol {
 class NetworkRequestTests: XCTestCase {
     var mockTask: MockURLSessionTask!
     var sut: NetworkRequest!
+    var preconditionFailed = false
 
     override func setUp() {
         super.setUp()
         mockTask = MockURLSessionTask()
         sut = NetworkRequest()
+        
+        evaluatePrecondition = { condition, message, file, line in
+            if !condition {
+                self.preconditionFailed = true
+            }
+        }
     }
 
     override func tearDown() {
         mockTask = nil
         sut = nil
+        evaluatePrecondition = defaultPrecondition
         super.tearDown()
     }
 
@@ -44,6 +52,14 @@ class NetworkRequestTests: XCTestCase {
         sut.start(mockTask)
         
         XCTAssertTrue(sut.currentTask! === mockTask)
+    }
+
+    func testStartTask_WithExistingTask_ShouldFailPrecondition() {
+        sut.start(mockTask)
+        
+        sut.start(mockTask)
+        
+        XCTAssertTrue(preconditionFailed, "Expected precondition failure")
     }
 
 }

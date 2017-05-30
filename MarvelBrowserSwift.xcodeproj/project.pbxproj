@@ -31,6 +31,7 @@
 		BB1705DC530886F8CCFE95D5 /* FetchCharactersResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17035D92981C1D2D7E20EB /* FetchCharactersResponseBuilder.swift */; };
 		BB1706A10985951BF01415C0 /* FetchCharactersMarvelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170721EC25C3B61E99CE97 /* FetchCharactersMarvelService.swift */; };
 		BB1706D64BA7B8387E0AB724 /* CharactersSliceResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170835C8645D85C8AFBC26 /* CharactersSliceResponseModel.swift */; };
+		BB17077583FDFE5E5D1AC9F4 /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170FAD9BF40B8495F4F72F /* Precondition.swift */; };
 		BB1709D01989D78712C43F1E /* FetchCharactersResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170EFBD2C55276522E8486 /* FetchCharactersResponseModel.swift */; };
 		BB1709F2BC1C6A82949B0B75 /* CharacterResponseBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170AADE65B2258A37C9A6A /* CharacterResponseBuilderTests.swift */; };
 		BB170C6150170182CC4BB0B8 /* CharacterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170D1FA3D0E4C4CCE26D02 /* CharacterResponseModel.swift */; };
@@ -92,6 +93,7 @@
 		BB170C78DECFA5B9F4373979 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		BB170D1FA3D0E4C4CCE26D02 /* CharacterResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterResponseModel.swift; sourceTree = "<group>"; };
 		BB170EFBD2C55276522E8486 /* FetchCharactersResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCharactersResponseModel.swift; sourceTree = "<group>"; };
+		BB170FAD9BF40B8495F4F72F /* Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Precondition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				482F79C31DD6DCEA00712E9B /* HasQueryTests.swift */,
 				BB170C78DECFA5B9F4373979 /* NetworkRequest.swift */,
 				BB1703CAF4F8E4CE56B6C5D5 /* NetworkRequestTests.swift */,
+				BB170FAD9BF40B8495F4F72F /* Precondition.swift */,
 			);
 			path = MarvelBrowserSwift;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				BB1705DC530886F8CCFE95D5 /* FetchCharactersResponseBuilder.swift in Sources */,
 				BB1706D64BA7B8387E0AB724 /* CharactersSliceResponseModel.swift in Sources */,
 				BB1702581BA0191C5C590FCD /* NetworkRequest.swift in Sources */,
+				BB17077583FDFE5E5D1AC9F4 /* Precondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
