@@ -257,11 +257,11 @@
 				TargetAttributes = {
 					0EBB3C861CCC4090005EF4D5 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					0EBB3C9A1CCC4091005EF4D5 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = 0EBB3C861CCC4090005EF4D5;
 					};
 				};
@@ -402,7 +402,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.AcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowserSwift.app/MarvelBrowserSwift";
 			};
 			name = Debug;
@@ -416,7 +415,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.AcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowserSwift.app/MarvelBrowserSwift";
 			};
 			name = Release;
@@ -448,6 +446,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -470,6 +469,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -483,7 +483,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MarvelBrowserSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MarvelBrowserSwift/MarvelBrowserSwift-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -497,7 +496,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MarvelBrowserSwift/MarvelBrowserSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -509,7 +507,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MarvelBrowserSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowserSwift.app/MarvelBrowserSwift";
 			};
 			name = Debug;
@@ -523,7 +520,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MarvelBrowserSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowserSwift.app/MarvelBrowserSwift";
 			};
 			name = Release;
