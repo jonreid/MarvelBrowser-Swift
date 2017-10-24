@@ -2,11 +2,14 @@ excluded:
   - Pods
   
 opt_in_rules:
+  - array_init
   - attributes
   - closure_end_indentation
   - closure_spacing
   - conditional_returns_on_newline
+  - contains_over_first_not_nil
   - empty_count
+  - explicit_enum_raw_value
   - explicit_init
   - extension_access_modifier
   - fatal_error_message
@@ -15,15 +18,21 @@ opt_in_rules:
   - force_unwrapping
   - implicit_return
   - implicitly_unwrapped_optional
+  - joined_default_parameter
   - let_var_whitespace
+  - literal_expression_end_indentation
+  - multiline_arguments
   - multiline_parameters
   - nimble_operator
   - no_extension_access_modifier
+  - no_grouping_extension
   - number_separator
   - object_literal
   - operator_usage_whitespace
   - overridden_super_call
+  - pattern_matching_keywords
   - prohibited_super_call
+  - quick_discouraged_call
   - redundant_nil_coalescing
   - sorted_imports
   - strict_fileprivate
