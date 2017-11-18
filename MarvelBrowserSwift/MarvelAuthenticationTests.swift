@@ -22,13 +22,13 @@ class MarvelAuthenticationTests: XCTestCase {
     func testPublicKey_ShouldHave32Characters() {
         let key = sut.publicKey
         
-        XCTAssertEqual(key.characters.count, 32)
+        XCTAssertEqual(key.count, 32)
     }
     
     func testPrivateKey_ShouldHave40Characters() {
         let key = sut.privateKey
         
-        XCTAssertEqual(key.characters.count, 40)
+        XCTAssertEqual(key.count, 40)
     }
     
     func testMd5OfKnownString_ShouldYieldKnownResult() { // http://tools.ietf.org/html/rfc1321
