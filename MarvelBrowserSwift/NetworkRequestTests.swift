@@ -1,4 +1,4 @@
-//  TDD sample app MarvelBrowser-Swift by Jon Reid, http://qualitycoding.org/about/
+//  TDD sample app MarvelBrowser-Swift by Jon Reid, https://qualitycoding.org/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
 @testable import MarvelBrowserSwift
@@ -16,7 +16,7 @@ class MockURLSessionTask: URLSessionTaskProtocol {
     }
 }
 
-// swiftlint:disable implicitly_unwrapped_optional force_unwrap
+// swiftlint:disable implicitly_unwrapped_optional force_unwrapping
 
 class NetworkRequestTests: XCTestCase {
     var mockTask: MockURLSessionTask!

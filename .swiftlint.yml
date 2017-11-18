@@ -1,4 +1,5 @@
 excluded:
+  - .idea
   - Pods
   
 opt_in_rules:
