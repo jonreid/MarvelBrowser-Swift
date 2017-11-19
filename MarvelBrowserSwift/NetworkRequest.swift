@@ -13,6 +13,7 @@ class NetworkRequest {
     private(set) var currentTask: URLSessionTaskProtocol?
 
     func start(_ task: URLSessionTaskProtocol) {
+        precondition(currentTask == nil)
         currentTask = task
         task.resume()
     }
