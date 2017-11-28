@@ -42,24 +42,24 @@ class NetworkRequestTests: XCTestCase {
         super.tearDown()
     }
 
-    func testStartTask_ShouldTellTaskToResume() {
+    func testStart_ShouldTellTaskToResume() {
         sut.start(mockTask)
         
         mockTask.verifyResume()
     }
 
-    func testStartTask_ShouldRetainGivenTask() {
+    func testStart_ShouldRetainGivenTask() {
         sut.start(mockTask)
         
         XCTAssertTrue(sut.currentTask! === mockTask)
     }
 
-    func testStartTask_WithExistingTask_ShouldFailPrecondition() {
+    func testStart_WithExistingTask_ShouldFailPrecondition() {
         sut.start(mockTask)
         
         sut.start(mockTask)
         
         XCTAssertTrue(preconditionFailed, "Expected precondition failure")
     }
-
+    
 }
