@@ -6,13 +6,22 @@ import XCTest
 
 class MockURLSessionTask: URLSessionTaskProtocol {
     private var resumeCallCount = 0
+    private var cancelCallCount = 0
 
     func resume() {
         resumeCallCount += 1
     }
-    
+
     func verifyResume(file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(resumeCallCount, 1, "call count", file: file, line: line)
+    }
+
+    func cancel() {
+        cancelCallCount += 1
+    }
+
+    func verifyCancel(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(cancelCallCount, 1, "call count", file: file, line: line)
     }
 }
 
@@ -61,5 +70,13 @@ class NetworkRequestTests: XCTestCase {
         
         XCTAssertTrue(preconditionFailed, "Expected precondition failure")
     }
-    
+
+    func testCancel_WithExistingTask_ShouldCancelCurrentTask() {
+        sut.start(mockTask)
+        
+        sut.cancel()
+        
+        mockTask.verifyCancel()
+    }
+
 }

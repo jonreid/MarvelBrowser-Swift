@@ -5,6 +5,7 @@ import Foundation
 
 protocol URLSessionTaskProtocol: class {
     func resume()
+    func cancel()
 }
 
 extension URLSessionTask: URLSessionTaskProtocol {}
@@ -16,5 +17,9 @@ class NetworkRequest {
         precondition(currentTask == nil)
         currentTask = task
         task.resume()
+    }
+
+    func cancel() {
+        currentTask?.cancel()
     }
 }
