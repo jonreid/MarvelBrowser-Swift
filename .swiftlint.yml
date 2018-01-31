@@ -9,6 +9,7 @@ opt_in_rules:
   - closure_spacing
   - conditional_returns_on_newline
   - contains_over_first_not_nil
+  - discouraged_object_literal
   - empty_count
   - explicit_enum_raw_value
   - explicit_init
@@ -30,17 +31,23 @@ opt_in_rules:
   - number_separator
   - object_literal
   - operator_usage_whitespace
+  - override_in_extension
   - overridden_super_call
   - pattern_matching_keywords
   - prohibited_super_call
   - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
   - redundant_nil_coalescing
+  - required_enum_case
+  - sorted_first_last
   - sorted_imports
   - strict_fileprivate
   - switch_case_on_newline
   - trailing_closure
   - unneeded_parentheses_in_closure_argument
   - vertical_parameter_alignment_on_call
+  - yoda_condition
 
 file_header:
   required_pattern: |
