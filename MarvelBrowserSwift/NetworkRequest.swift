@@ -21,5 +21,6 @@ class NetworkRequest {
 
     func cancel() {
         currentTask?.cancel()
+        currentTask = nil
     }
 }
