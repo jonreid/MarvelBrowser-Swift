@@ -1,5 +1,5 @@
 //  TDD sample app MarvelBrowser-Swift by Jon Reid, https://qualitycoding.org/
-//  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2018 Jonathan M. Reid. See LICENSE.txt
 
 struct CharactersSliceResponseBuilder {
     let offset: Int?
