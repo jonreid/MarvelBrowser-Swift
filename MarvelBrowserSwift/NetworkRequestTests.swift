@@ -79,4 +79,11 @@ class NetworkRequestTests: XCTestCase {
         mockTask.verifyCancel()
     }
 
+    func testCancel_WithExistingTask_ShouldReleaseCurrentTask() {
+        sut.start(mockTask)
+        
+        sut.cancel()
+        
+        XCTAssertNil(sut.currentTask)
+    }
 }
