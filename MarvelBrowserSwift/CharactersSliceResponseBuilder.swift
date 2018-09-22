@@ -13,7 +13,7 @@ struct CharactersSliceResponseBuilder {
     }
 
     private static func parseResults(from array: [Any]?) -> [CharacterResponseBuilder]? {
-        return array?.flatMap { $0 as? [String: Any] }
+        return array?.compactMap { $0 as? [String: Any] }
                      .map { CharacterResponseBuilder(dictionary: $0) }
     }
 
@@ -26,6 +26,6 @@ struct CharactersSliceResponseBuilder {
     }
 
     private func buildCharacters() -> [CharacterResponseModel] {
-        return results?.flatMap { $0.build() } ?? []
+        return results?.compactMap { $0.build() } ?? []
     }
 }
